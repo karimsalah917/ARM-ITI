@@ -16,6 +16,12 @@
 /********************************** Definitions ********************************************/
 #define PLLSRC_HSI 0xFFBFFFFF
 #define PLLSRC_HSE 0x00400000
+
+#define SWS        0x0000000C
+#define SWS_HSI    0x00000000
+#define SWS_HSE    0x00000004
+#define SWS_PLL    0x00000008
+
 /**********************************   Types ************************************************/
 
 /*
@@ -158,7 +164,7 @@ RCC_Error_t RCC_Select_SYSCLOCK(SYSCLOCK_t SYSCLOCK);
 * @param void
 * @return uint8
 */
-uint8 RCC_Get_SYSCLOCK(void);
+RCC_Error_t RCC_Get_SYSCLOCK(void);
 
 
 
@@ -204,7 +210,7 @@ RCC_Error_t RCC_Disable_AHB1Peripheral(AHB1peripheral_t AHB1peripheral);
 * @return Error status
 * @example RCC_Select_SYSCLOCK(SYSCLOCK_PLL)
 */
-RCC_Error_t RCC_Enable_AHB2Peripheral(AHB2peripheral_t AHB1peripheral);
+RCC_Error_t RCC_Enable_AHB2Peripheral(AHB2peripheral_t AHB2peripheral);
 /*
 * @brief Function Used to Disable any Clock in the System
 * @param CLOCK  

@@ -57,6 +57,7 @@ typedef struct
 static RCC_t* const RCC =(uint32*) 0x40023800;
 /********************************** Static Functions ***************************************/
 
+/********************************** Implementation *****************************************/
 RCC_Error_t RCC_Select_SYSCLOCK(SYSCLOCK_t SYSCLOCK)
 {
     RCC_Error_t LOC_RET=RCC_Error_NOK;
@@ -82,74 +83,75 @@ RCC_Error_t RCC_Select_SYSCLOCK(SYSCLOCK_t SYSCLOCK)
 }
 
 
-uint8 RCC_Get_SYSCLOCK(void)
+RCC_Error_t RCC_Get_SYSCLOCK(uint8 *COPY_Status_variable)
 {
-
+*COPY_Status_variable=RCC->RCC_CFGR &SWS;
 }
 
 
 RCC_Error_t RCC_Enable_CLOCK(CLOCK_t CLOCK)
 {
-
+    RCC->RCC_CR |=CLOCK;
 }
 
 RCC_Error_t RCC_Disable_CLOCK(CLOCK_t CLOCK)
 {
-
+    RCC->RCC_CR &=~CLOCK;
 }
 
 RCC_Error_t RCC_Enable_AHB1Peripheral(AHB1peripheral_t AHB1peripheral)
 {
-
+    RCC->RCC_AHB1ENR |= AHB1peripheral;
 }
 
 RCC_Error_t RCC_Disable_AHB1Peripheral(AHB1peripheral_t AHB1peripheral)
 {
-
+    RCC->RCC_AHB1ENR &= ~AHB1peripheral;
 }
 
-RCC_Error_t RCC_Enable_AHB2Peripheral(AHB2peripheral_t AHB1peripheral)
+RCC_Error_t RCC_Enable_AHB2Peripheral(AHB2peripheral_t AHB2peripheral)
 {
-
+    RCC->RCC_AHB2ENR |= AHB2peripheral;
 }
 RCC_Error_t RCC_Disable_AHB2Peripheral(AHB2peripheral_t AHB2peripheral)
 {
-
+    RCC->RCC_AHB2ENR &= ~AHB2peripheral;
 }
 
 
 RCC_Error_t RCC_Enable_APB1Peripheral(APB1peripheral_t APB1peripheral)
 {
-
+    RCC->RCC_APB1ENR |= APB1peripheral;
 }
 RCC_Error_t RCC_Disable_APB1Peripheral(APB1peripheral_t APB1peripheral)
 {
-
+    RCC->RCC_APB1ENR &= ~APB1peripheral;
 }
 
 RCC_Error_t RCC_Enable_APB2Peripheral(APB2peripheral_t APB2peripheral)
 {
-
+    RCC->RCC_APB2ENR |=APB2peripheral;
 }
 
 RCC_Error_t RCC_Disable_APB2Peripheral(APB2peripheral_t APB2peripheral)
 {
-
+     RCC->RCC_APB2ENR &=~APB2peripheral;
 }
+
 
 RCC_Error_t RCC_Configure_AHBprescaller(AHBprescaller_t AHBprescaller)
 {
-
+    RCC->RCC_CFGR |=AHBprescaller;
 }
 
 RCC_Error_t RCC_Configure_APB1prescaller(APB1prescaller_t APB1prescaller)
 {
-
+    RCC->RCC_CFGR |=APB1prescaller;
 }
 
 RCC_Error_t RCC_Configure_APB2prescaller(APB2prescaller_t APB2prescaller)
 {
-
+    RCC->RCC_CFGR |=APB2prescaller;
 }
 
 
