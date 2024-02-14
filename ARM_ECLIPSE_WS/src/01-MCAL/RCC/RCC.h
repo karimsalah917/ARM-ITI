@@ -14,8 +14,6 @@
 #include "../../00-LIB/STD.h"
 
 /********************************** Definitions ********************************************/
-#define PLLSRC_HSI 0xFFBFFFFF
-#define PLLSRC_HSE 0x00400000
 
 #define SWS        0x0000000C
 #define SWS_HSI    0x00000000
@@ -143,6 +141,15 @@ typedef enum
     APB2prescaller_EIGHT    =0x0000C000,
     APB2prescaller_SIXTEEN  =0x0000E000
 }APB2prescaller_t;
+
+/*
+* @brief Created DataType for Each PLLSRC Values
+*/
+typedef enum 
+{
+    PLLSRC_HSI =0xFFBFFFFF,
+    PLLSRC_HSE =0x00400000
+}PLLSRC_t;
 /**********************************   API's ************************************************/
 
 
@@ -164,7 +171,7 @@ RCC_Error_t RCC_Select_SYSCLOCK(SYSCLOCK_t SYSCLOCK);
 * @param void
 * @return uint8
 */
-RCC_Error_t RCC_Get_SYSCLOCK(void);
+RCC_Error_t RCC_Get_SYSCLOCK(uint8 *COPY_Status_variable);
 
 
 
@@ -281,5 +288,5 @@ RCC_Error_t RCC_Configure_APB2prescaller(APB2prescaller_t APB2prescaller);
 * @return Error status
 * @example RCC_Select_SYSCLOCK(SYSCLOCK_PLL)
 */
-RCC_Error_t RCC_Configure_PLL(uint8 PLLQ,uint8 PLLP, uint8 PLLN,uint8 PLLM,uint8 PLLSRC);
+RCC_Error_t RCC_Configure_PLL(uint32 PLLQ,uint32 PLLP, uint32 PLLN,uint32 PLLM,PLLSRC_t PLLSRC);
 #endif

@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "diag/trace.h"
-
+#include "01-MCAL/RCC/RCC.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -51,12 +51,13 @@
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
-int
+
 main(int argc, char* argv[])
 {
   // At this stage the system clock should have already been configured
   // at high speed.
-
+  uint8 SYSCLOCK;
+   RCC_Get_SYSCLOCK(&);
   // Infinite loop
   while (1)
     {
