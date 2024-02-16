@@ -2,15 +2,25 @@
 /* Author       : Karim Salah Fathey                                                       */
 /* Authority    : Information Technology Institute                                         */
 /* Module       : RCC                                                                      */
-/* Version      : v1.0                                                                     */
+/* Version      : v1.1                                                                     */
 /* Date         : 11/2/2024                                                                */
 /* File Details : Source file for RCC Driver                                               */
 /* Target       : STM32f401cc                                                              */
 /*******************************************************************************************/
 /********************************** Includes ***********************************************/
-#include "RCC.h"
-#include "../../00-LIB/STD.h"
+#include "../../../include/01-MCAL/RCC/RCC.h"
+#include "../../../include/00-LIB/STD.h"
 /********************************** Definitions ********************************************/
+/*
+* @brief CFGR Register Masks
+*/
+#define RCC_CFGR_SW_CLEAR              0xfffffffC
+#define RCC_CFGR_HPRE_CLEAR            0xffffff0f
+#define RCC_CFGR_PPRE1_CLEAR           0xffffe3ff
+#define RCC_CFGR_PPRE2_CLEAR           0xffff1fff
+#define RCC_CFGR_RTCPRE_CLEAR          0xffE0ffff
+#define RCC_CFGR_MCO1PRE_CLEAR         0xf8ffffff
+#define RCC_CFGR_MCO2PRE_CLEAR         0xc7ffffff
 
 /**********************************  Types  ************************************************/
 
@@ -59,28 +69,14 @@ static RCC_t* const RCC =(RCC_t*) 0x40023800;
 /********************************** Static Functions ***************************************/
 
 /********************************** Implementation *****************************************/
+
 RCC_Error_t RCC_Select_SYSCLOCK(SYSCLOCK_t SYSCLOCK)
 {
-    RCC_Error_t LOC_RET=RCC_Error_NOK;
-    switch (SYSCLOCK)
-    {
-    case SYSCLOCK_HSI:
-        RCC->RCC_CFGR &=SYSCLOCK_HSI;
-        LOC_RET=RCC_Error_OK;
-        break;
-    case SYSCLOCK_HSE:
-        RCC->RCC_CFGR |=SYSCLOCK_HSE;
-        LOC_RET=RCC_Error_OK;
-        break;
-    case SYSCLOCK_PLL:
-        RCC->RCC_CFGR |=SYSCLOCK_HSE;
-        LOC_RET=RCC_Error_OK;
-        break;
-    default:
-    LOC_RET=RCC_Error_NOK;
-        break;
-    }
-    return LOC_RET;
+    uint32 Local_tempREG= RCC->RCC_CFGR;
+    Local_tempREG &=RCC_CFGR_SW_CLEAR;
+    Local_tempREG |=SYSCLOCK;
+    RCC->RCC_CFGR =Local_tempREG;
+    return RCC_Error_OK;
 }
 
 
@@ -153,28 +149,35 @@ RCC_Error_t RCC_Disable_APB2Peripheral(APB2peripheral_t APB2peripheral)
 
 RCC_Error_t RCC_Configure_AHBprescaller(AHBprescaller_t AHBprescaller)
 {
-    RCC->RCC_CFGR |=AHBprescaller;
+    uint32 Local_tempREG= RCC->RCC_CFGR ;
+    Local_tempREG &= RCC_CFGR_HPRE_CLEAR;
+    Local_tempREG |= AHBprescaller;
+    RCC->RCC_CFGR =Local_tempREG;
     return RCC_Error_OK;
 }
 
 RCC_Error_t RCC_Configure_APB1prescaller(APB1prescaller_t APB1prescaller)
 {
-    RCC->RCC_CFGR |=APB1prescaller;
+    uint32 Local_tempREG= RCC->RCC_CFGR ;
+    Local_tempREG &= RCC_CFGR_PPRE1_CLEAR;
+    Local_tempREG |= APB1prescaller;
+    RCC->RCC_CFGR =Local_tempREG;
     return RCC_Error_OK;
 }
 
 RCC_Error_t RCC_Configure_APB2prescaller(APB2prescaller_t APB2prescaller)
 {
-    RCC->RCC_CFGR |=APB2prescaller;
+    uint32 Local_tempREG= RCC->RCC_CFGR ;
+    Local_tempREG &= RCC_CFGR_PPRE2_CLEAR;
+    Local_tempREG |= APB2prescaller;
+    RCC->RCC_CFGR =Local_tempREG;
     return RCC_Error_OK;
 }
 
 
-RCC_Error_t RCC_Configure_PLL(uint32 PLLQ,uint32 PLLP, uint32 PLLN,uint32 PLLM,PLLSRC_t PLLSRC)
+RCC_Error_t RCC_Configure_PLL()
 {
-    uint32 Temp_Mask=0x00000000;
-    Temp_Mask = (PLLQ << 24) | (PLLP << 16) | (PLLN << 6) | (PLLM << 0)|(PLLSRC);
-    RCC->RCC_PLLCFGR |=Temp_Mask;
+    RCC->RCC_PLLCFGR |=0x07415419;
     return RCC_Error_OK;
 
 }

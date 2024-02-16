@@ -30,7 +30,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "diag/trace.h"
-#include "01-MCAL/RCC/RCC.h"
+#include "../include/01-MCAL/RCC/RCC.h"
+#include "../include/00-LIB/STD.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -52,12 +53,42 @@
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
 
-main(int argc, char* argv[])
+void main(int argc, char* argv[])
 {
   // At this stage the system clock should have already been configured
   // at high speed.
-  uint8 SYSCLOCK;
-   RCC_Get_SYSCLOCK(&);
+  
+
+  RCC_Enable_CLOCK(CLOCK_HSE);
+  RCC_Disable_CLOCK(CLOCK_HSE);
+  RCC_Enable_CLOCK(CLOCK_HSE);
+  RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
+  RCC_Disable_CLOCK(CLOCK_HSI);
+  RCC_Configure_PLL();
+  RCC_Enable_CLOCK(CLOCK_PLL);
+  RCC_Disable_CLOCK(CLOCK_PLL);
+
+  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
+  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOA);
+
+  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
+  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOB);
+
+  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOC);
+  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOC);
+
+  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOD);
+  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOD);
+
+  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOE);
+  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOE);
+
+
+
+
+
+
+
   // Infinite loop
   while (1)
     {
