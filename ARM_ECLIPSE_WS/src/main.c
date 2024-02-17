@@ -67,7 +67,7 @@ void main(int argc, char* argv[])
   RCC_Configure_PLL();
   RCC_Enable_CLOCK(CLOCK_PLL);
   RCC_Disable_CLOCK(CLOCK_PLL);
-
+1
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
   RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOA);
 
