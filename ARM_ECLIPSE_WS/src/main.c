@@ -32,6 +32,7 @@
 #include "diag/trace.h"
 #include "../include/01-MCAL/RCC/RCC.h"
 #include "../include/00-LIB/STD.h"
+#include "../include/01-MCAL/GPIO/GPIO.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -60,31 +61,39 @@ void main(int argc, char* argv[])
   
 
   RCC_Enable_CLOCK(CLOCK_HSE);
-  RCC_Disable_CLOCK(CLOCK_HSE);
-  RCC_Enable_CLOCK(CLOCK_HSE);
   RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
-  RCC_Disable_CLOCK(CLOCK_HSI);
-  RCC_Configure_PLL();
-  RCC_Enable_CLOCK(CLOCK_PLL);
-  RCC_Disable_CLOCK(CLOCK_PLL);
-1
+
+
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
-  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOA);
-
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
-  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOB);
-
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOC);
-  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOC);
 
-  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOD);
-  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOD);
-
-  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOE);
-  RCC_Disable_AHB1Peripheral(AHB1peripheral_GPIOE);
-
-
-
+  GPIO_CONFIG_t LED1 =
+  {
+    .PORT=GPIO_PORTA,
+    .PIN=GPIO_PIN1,
+    .MODE=GPIO_MODE_OUT_PP_FL,
+    .SPEED=GPIO_SPEED_MED
+  };
+  GPIO_CONFIG_t LED2 =
+  {
+    .PORT=GPIO_PORTA,
+    .PIN=GPIO_PIN0,
+    .MODE=GPIO_MODE_OUT_PP_FL,
+    .SPEED=GPIO_SPEED_MED
+  };
+    GPIO_CONFIG_t LED3 =
+  {
+    .PORT=GPIO_PORTC,
+    .PIN=GPIO_PIN11,
+    .MODE=GPIO_MODE_AF_OD_PD,
+    .SPEED=GPIO_SPEED_HIGH
+  };
+  GPIO_INIT_PIN(&LED1);
+  GPIO_INIT_PIN(&LED2);
+  GPIO_INIT_PIN(&LED3);
+  GPIO_SetPinValue(GPIO_PORTA,GPIO_PIN0,PIN_STATE_HIGH);
+  GPIO_SetPinValue(GPIO_PORTA,GPIO_PIN1,PIN_STATE_HIGH);
 
 
 

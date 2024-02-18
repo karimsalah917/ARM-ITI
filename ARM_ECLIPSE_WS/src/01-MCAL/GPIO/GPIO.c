@@ -14,6 +14,14 @@
 #define GPIOA_BASE_ADDRESS                      0x40020000                     
 #define GPIOB_BASE_ADDRESS                      0x40020400
 #define GPIOC_BASE_ADDRESS                      0x40020800
+
+#define GPIO_MODER_RESETMASK                    0xFFFFFFFC
+#define MODER_OFFSET                            0x00000003
+
+#define OTYPER_OFFSET                           0x00000004
+
+#define GPIO_PUPDR_RESETMASK                    0xFFFFFFFC
+#define PUPDR_OFFSET                            0x00000018
 /**********************************   Types ************************************************/
 
 typedef struct
@@ -48,13 +56,29 @@ static GPIO_t * const GPIO[3] =
  */
 GPIO_Error_t GPIO_INIT_PIN(GPIO_CONFIG_t * ADD_CONFIGURATION)
 {
-    uint32 LocalTempMODER =
-    GPIO[ADD_CONFIGURATION->PORT]-> MODER &=;
-    GPIO[ADD_CONFIGURATION->PORT]-> OSPEEDR=;
-    GPIO[ADD_CONFIGURATION->PORT]->OTYPER;
-    GPIO[ADD_CONFIGURATION->PORT]->PUPDR;
+    uint32 LocalTempMODER =GPIO[ADD_CONFIGURATION->PORT]-> MODER;
+    LocalTempMODER &=GPIO_MODER_RESETMASK<<( ADD_CONFIGURATION->PIN );
+    LocalTempMODER |=( (ADD_CONFIGURATION->MODE) & MODER_OFFSET ) << ( 2*(ADD_CONFIGURATION->PIN) );
+    GPIO[ADD_CONFIGURATION->PORT]-> MODER =LocalTempMODER;
+
+    GPIO[ADD_CONFIGURATION->PORT]-> OSPEEDR |=(ADD_CONFIGURATION->SPEED) << ( 2*(ADD_CONFIGURATION->PIN) );
+
+    uint32 LocalTempOTYPER = GPIO[ADD_CONFIGURATION->PORT]->OTYPER;
+    LocalTempOTYPER |=(((ADD_CONFIGURATION->MODE)&OTYPER_OFFSET)>>2)<<( ADD_CONFIGURATION->PIN );
+    GPIO[ADD_CONFIGURATION->PORT]->OTYPER =LocalTempOTYPER;
+
+    uint32 LocalTempPUPDR = GPIO[ADD_CONFIGURATION->PORT]->PUPDR;
+    LocalTempPUPDR &= GPIO_PUPDR_RESETMASK << ( ADD_CONFIGURATION->PIN );
+    LocalTempPUPDR |=( ((ADD_CONFIGURATION->MODE) & PUPDR_OFFSET)>>3 ) << ( 2*(ADD_CONFIGURATION->PIN) );
+    GPIO[ADD_CONFIGURATION->PORT]->PUPDR=LocalTempPUPDR;
+
+    return 1;
 }
 
-GPIO_Error_t GPIO_SetPinValue(GPIO_PORT_t  COPY_GPIO_PORT, GPIO_PIN_t COPY_GPIO_PIN, PIN_STATE_t COPT_PIN_STATE);
+GPIO_Error_t GPIO_SetPinValue(GPIO_PORT_t  COPY_GPIO_PORT, GPIO_PIN_t COPY_GPIO_PIN, PIN_STATE_t COPY_PIN_STATE)
+{
+    GPIO[COPY_GPIO_PORT]->ODR |= (COPY_PIN_STATE<<COPY_GPIO_PIN);
+    return OK;
+}
 
 GPIO_Error_t GPIO_GetPinValue(GPIO_PORT_t GPIO_PORT,GPIO_PIN_t GPIO_PIN,uint8 * Copy_PinValue);

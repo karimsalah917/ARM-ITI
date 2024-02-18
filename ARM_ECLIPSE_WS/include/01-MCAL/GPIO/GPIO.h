@@ -72,14 +72,14 @@ typedef enum
     GPIO_MODE_OUT_PP_PU     = 0x00000009,
     GPIO_MODE_OUT_PP_PD     = 0x00000011,
     GPIO_MODE_OUT_OD_FL     = 0x00000005,
-    GPIO_MODE_OUT_OD_PD     = 0x0000000D,
+    GPIO_MODE_OUT_OD_PU     = 0x0000000D,
     GPIO_MODE_OUT_OD_PD     = 0x00000015,
 
     GPIO_MODE_AF_PP_FL      = 0x00000002,   
     GPIO_MODE_AF_PP_PU      = 0x0000000A,
     GPIO_MODE_AF_PP_PD      = 0x00000012,
     GPIO_MODE_AF_OD_FL      = 0x00000006,
-    GPIO_MODE_AF_OD_PD      = 0x0000000E,
+    GPIO_MODE_AF_OD_PU      = 0x0000000E,
     GPIO_MODE_AF_OD_PD      = 0x00000016
 
 }GPIO_MODE_t;
@@ -134,7 +134,7 @@ GPIO_Error_t GPIO_INIT_PIN(GPIO_CONFIG_t * ADD_CONFIGURATION);
  * @param COPT_PIN_STATE The state to set the GPIO pin to (e.g., HIGH or LOW).
  * @return GPIO_Error_t Returns an error code indicating the success or failure of the operation.
  */
-GPIO_Error_t GPIO_SetPinValue(GPIO_PORT_t  COPY_GPIO_PORT, GPIO_PIN_t COPY_GPIO_PIN, PIN_STATE_t COPT_PIN_STATE);
+GPIO_Error_t GPIO_SetPinValue(GPIO_PORT_t  COPY_GPIO_PORT, GPIO_PIN_t COPY_GPIO_PIN, PIN_STATE_t COPY_PIN_STATE);
 
 /**
  * @brief Retrieves the current value of a GPIO pin.
