@@ -1,0 +1,11 @@
+14:50:12 **** Incremental Build of configuration Debug for project ARM_ECLIPSE_WS ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "ARM_ECLIPSE_WS.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4819	    160	    412	   5391	   150f	ARM_ECLIPSE_WS.elf
+'Finished building: ARM_ECLIPSE_WS.siz'
+' '
+
+14:50:13 Build Finished. 0 errors, 0 warnings. (took 703ms)
+
