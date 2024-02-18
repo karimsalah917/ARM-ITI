@@ -1,0 +1,7 @@
+16:35:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+make: *** No rule to make target '../system/src/newlib/assert.c', needed by 'system/src/newlib/assert.o'.  Stop.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+16:35:53 Build Failed. 1 errors, 0 warnings. (took 391ms)
+
