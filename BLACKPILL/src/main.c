@@ -60,7 +60,6 @@ void main(int argc, char* argv[])
   // at high speed.
   
 
-	uint8 myvar=0;
   RCC_Enable_CLOCK(CLOCK_HSE);
   RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
 
@@ -73,49 +72,49 @@ void main(int argc, char* argv[])
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN0,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
   GPIO_CONFIG_t LED2 =
   {
-    .PORT=GPIO_PORTA,
+    .PORT=GPIO_PORTB,
     .PIN=GPIO_PIN1,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
     GPIO_CONFIG_t LED3 =
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN2,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
     GPIO_CONFIG_t LED4 =
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN3,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
     GPIO_CONFIG_t LED5 =
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN4,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
     GPIO_CONFIG_t LED6 =
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN5,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
     GPIO_CONFIG_t LED7 =
   {
     .PORT=GPIO_PORTA,
     .PIN=GPIO_PIN6,
-    .MODE=GPIO_MODE_INPUT_PU,
+    .MODE=GPIO_MODE_OUT_PP_FL,
     .SPEED=GPIO_SPEED_MED
   };
   GPIO_INIT_PIN(&LED1);
@@ -126,27 +125,7 @@ void main(int argc, char* argv[])
   GPIO_INIT_PIN(&LED6);
   GPIO_INIT_PIN(&LED7);
 
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN0,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN1,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN2,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN3,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN4,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN5,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
-  GPIO_GetPinValue(GPIO_PORTA,GPIO_PIN6,&myvar);
-  trace_printf("myvar=%d",myvar);
-  myvar=0;
+
 
   // Infinite loop
   while (1)

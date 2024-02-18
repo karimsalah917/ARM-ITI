@@ -91,7 +91,7 @@ GPIO_Error_t GPIO_INIT_PIN(GPIO_CONFIG_t * ADD_CONFIGURATION)
     LocalTempREG = GPIO[ADD_CONFIGURATION->PORT]->PUPDR; //Reading the Corresponding PUPDR Register to the chosen Port
     LocalTempREG &= ~(GPIO_PUPDR_RESETMASK << ( 2*(ADD_CONFIGURATION->PIN ))); //Reseting the needed bits before modifing it
     LocalTempREG |=( ((ADD_CONFIGURATION->MODE) & PUPDR_OFFSET)>>3 ) << ( 2*(ADD_CONFIGURATION->PIN) ); //modifing the needed bits 
-    GPIO[ADD_CONFIGURATION->PORT]->PUPDR=LocalTempREG; // Applying the modification to the physical Register
+    GPIO[ADD_CONFIGURATION->PORT]->PUPDR=LocalTempREG; //Applying the modification to the physical Register
 
     return OK;
 }

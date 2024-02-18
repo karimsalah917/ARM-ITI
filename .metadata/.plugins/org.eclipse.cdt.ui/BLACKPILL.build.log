@@ -1,7 +1,11 @@
-16:35:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+16:46:13 **** Incremental Build of configuration Debug for project BLACKPILL ****
 make all 
-make: *** No rule to make target '../system/src/newlib/assert.c', needed by 'system/src/newlib/assert.o'.  Stop.
-"make all" terminated with exit code 2. Build might be incomplete.
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4819	    160	    412	   5391	   150f	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
 
-16:35:53 Build Failed. 1 errors, 0 warnings. (took 391ms)
+16:46:14 Build Finished. 0 errors, 0 warnings. (took 735ms)
 

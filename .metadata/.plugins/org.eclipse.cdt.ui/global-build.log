@@ -1,4 +1,532 @@
-16:35:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+16:46:38 **** Build of configuration Debug for project BlackPill_stm32f401cc ****
 make all 
-make: *** No rule to make target '../system/src/newlib/assert.c', needed by 'system/src/newlib/assert.o'.  Stop.
-"make all" terminated with exit code 2. Build might be incomplete.
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal.o" "../system/Source/stm32f4-hal/stm32f4xx_hal.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_adc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_adc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_adc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_adc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_adc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_adc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_can.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_can.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_can.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_can.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_can.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_can.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_cec.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_cec.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_cec.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_cec.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_cec.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_cec.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_cortex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_cortex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_cortex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_cortex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_cortex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_cortex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_crc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_crc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_crc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_crc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_crc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_crc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_cryp.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_cryp.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_cryp.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_cryp.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_cryp.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_cryp.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dac.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dac.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dac.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dac.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dac.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dac.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dma.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dma.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dma.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dma.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_dsi.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_dsi.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_dsi.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_dsi.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_dsi.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_dsi.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_eth.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_eth.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_eth.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_eth.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_eth.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_eth.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_exti.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_exti.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_exti.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_exti.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_exti.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_exti.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_flash.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_flash.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_flash.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_flash.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_gpio.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_gpio.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_gpio.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_gpio.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_gpio.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_gpio.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_hash.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_hash.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_hash.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_hash.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_hash.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_hash.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_hcd.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_hcd.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_hcd.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_hcd.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_hcd.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_hcd.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2c.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_i2c.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_i2c.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_i2c.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_i2c.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2c.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2s.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_i2s.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_i2s.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_i2s.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_i2s.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2s.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_irda.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_irda.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_irda.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_irda.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_irda.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_irda.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_lptim.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_lptim.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_lptim.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_lptim.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_lptim.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_lptim.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_mmc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_mmc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_mmc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_mmc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_mmc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_mmc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_nand.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_nand.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_nand.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_nand.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_nand.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_nand.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_nor.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_nor.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_nor.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_nor.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_nor.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_nor.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_pccard.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_pccard.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_pccard.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_pccard.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_pccard.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_pccard.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_pcd.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_pcd.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_pcd.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_pcd.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_pcd.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_pcd.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_pwr.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_pwr.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_pwr.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_pwr.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_pwr.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_pwr.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_qspi.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_qspi.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_qspi.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_qspi.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_qspi.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_qspi.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_rcc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_rcc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_rcc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_rcc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_rcc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_rcc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_rng.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_rng.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_rng.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_rng.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_rng.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_rng.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_rtc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_rtc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_rtc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_rtc.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_rtc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_rtc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_sai.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_sai.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_sai.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_sai.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_sai.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_sai.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_sd.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_sd.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_sd.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_sd.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_sd.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_sd.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_sdram.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_sdram.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_sdram.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_sdram.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_sdram.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_sdram.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_smbus.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_smbus.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_smbus.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_smbus.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_smbus.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_smbus.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_spi.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_spi.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_spi.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_spi.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_spi.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_spi.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_sram.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_sram.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_sram.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_sram.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_sram.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_sram.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_tim.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_tim.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_tim.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_tim.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_tim.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_tim.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_uart.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_uart.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_uart.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_uart.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_uart.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_uart.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_usart.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_usart.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_usart.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_usart.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_usart.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_usart.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.d" -MT"system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.o" "../system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_adc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_adc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_adc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_adc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_adc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_adc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_crc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_crc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_crc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_crc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_crc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_crc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_dac.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_dac.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_dac.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_dac.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_dac.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_dac.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_dma.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_dma.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_dma.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_dma.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_dma.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_dma.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_exti.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_exti.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_exti.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_exti.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_exti.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_exti.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_fmc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_fmc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_fmc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_fmc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_fmc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_fmc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_gpio.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_gpio.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_gpio.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_gpio.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_gpio.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_gpio.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_i2c.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_i2c.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_i2c.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_i2c.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_i2c.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_i2c.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_lptim.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_lptim.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_lptim.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_lptim.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_lptim.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_lptim.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_pwr.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_pwr.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_pwr.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_pwr.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_pwr.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_pwr.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_rcc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_rcc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_rcc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_rcc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_rcc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_rcc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_rng.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_rng.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_rng.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_rng.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_rng.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_rng.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_rtc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_rtc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_rtc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_rtc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_rtc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_rtc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_spi.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_spi.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_spi.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_spi.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_spi.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_spi.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_tim.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_tim.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_tim.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_tim.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_tim.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_tim.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_usart.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_usart.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_usart.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_usart.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_usart.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_usart.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_usb.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_usb.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_usb.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_usb.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_usb.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_usb.c'
+' '
+'Building file: ../system/Source/stm32f4-hal/stm32f4xx_ll_utils.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-unused-parameter -Wno-conversion -Wno-sign-conversion -Wno-bad-function-cast -Wno-unused-variable -Wno-implicit-function-declaration -MMD -MP -MF"system/Source/stm32f4-hal/stm32f4xx_ll_utils.d" -MT"system/Source/stm32f4-hal/stm32f4xx_ll_utils.o" -c -o "system/Source/stm32f4-hal/stm32f4xx_ll_utils.o" "../system/Source/stm32f4-hal/stm32f4xx_ll_utils.c"
+'Finished building: ../system/Source/stm32f4-hal/stm32f4xx_ll_utils.c'
+' '
+'Building file: ../system/Source/newlib/assert.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/newlib/assert.d" -MT"system/Source/newlib/assert.o" -c -o "system/Source/newlib/assert.o" "../system/Source/newlib/assert.c"
+'Finished building: ../system/Source/newlib/assert.c'
+' '
+'Building file: ../system/Source/newlib/cxx.cpp'
+'Invoking: GNU Arm Cross C++ Compiler'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu++11 -fabi-version=0 -fno-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics -MMD -MP -MF"system/Source/newlib/cxx.d" -MT"system/Source/newlib/cxx.o" -c -o "system/Source/newlib/cxx.o" "../system/Source/newlib/cxx.cpp"
+'Finished building: ../system/Source/newlib/cxx.cpp'
+' '
+'Building file: ../system/Source/newlib/exit.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/newlib/exit.d" -MT"system/Source/newlib/exit.o" -c -o "system/Source/newlib/exit.o" "../system/Source/newlib/exit.c"
+'Finished building: ../system/Source/newlib/exit.c'
+' '
+'Building file: ../system/Source/newlib/sbrk.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/newlib/sbrk.d" -MT"system/Source/newlib/sbrk.o" -c -o "system/Source/newlib/sbrk.o" "../system/Source/newlib/sbrk.c"
+'Finished building: ../system/Source/newlib/sbrk.c'
+' '
+'Building file: ../system/Source/newlib/startup.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -DOS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/newlib/startup.d" -MT"system/Source/newlib/startup.o" -c -o "system/Source/newlib/startup.o" "../system/Source/newlib/startup.c"
+'Finished building: ../system/Source/newlib/startup.c'
+' '
+'Building file: ../system/Source/newlib/syscalls.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/newlib/syscalls.d" -MT"system/Source/newlib/syscalls.o" -c -o "system/Source/newlib/syscalls.o" "../system/Source/newlib/syscalls.c"
+'Finished building: ../system/Source/newlib/syscalls.c'
+' '
+'Building file: ../system/Source/diag/trace-impl.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/diag/trace-impl.d" -MT"system/Source/diag/trace-impl.o" -c -o "system/Source/diag/trace-impl.o" "../system/Source/diag/trace-impl.c"
+'Finished building: ../system/Source/diag/trace-impl.c'
+' '
+'Building file: ../system/Source/diag/trace.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/diag/trace.d" -MT"system/Source/diag/trace.o" -c -o "system/Source/diag/trace.o" "../system/Source/diag/trace.c"
+'Finished building: ../system/Source/diag/trace.c'
+' '
+'Building file: ../system/Source/cortexm/exception-handlers.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/cortexm/exception-handlers.d" -MT"system/Source/cortexm/exception-handlers.o" -c -o "system/Source/cortexm/exception-handlers.o" "../system/Source/cortexm/exception-handlers.c"
+'Finished building: ../system/Source/cortexm/exception-handlers.c'
+' '
+'Building file: ../system/Source/cortexm/initialize-hardware.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/cortexm/initialize-hardware.d" -MT"system/Source/cortexm/initialize-hardware.o" -c -o "system/Source/cortexm/initialize-hardware.o" "../system/Source/cortexm/initialize-hardware.c"
+'Finished building: ../system/Source/cortexm/initialize-hardware.c'
+' '
+'Building file: ../system/Source/cortexm/reset-hardware.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/cortexm/reset-hardware.d" -MT"system/Source/cortexm/reset-hardware.o" -c -o "system/Source/cortexm/reset-hardware.o" "../system/Source/cortexm/reset-hardware.c"
+'Finished building: ../system/Source/cortexm/reset-hardware.c'
+' '
+'Building file: ../system/Source/cmsis/system_stm32f4xx.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -Wno-padded -MMD -MP -MF"system/Source/cmsis/system_stm32f4xx.d" -MT"system/Source/cmsis/system_stm32f4xx.o" -c -o "system/Source/cmsis/system_stm32f4xx.o" "../system/Source/cmsis/system_stm32f4xx.c"
+'Finished building: ../system/Source/cmsis/system_stm32f4xx.c'
+' '
+'Building file: ../system/Source/cmsis/vectors_stm32f401xc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/Source/cmsis/vectors_stm32f401xc.d" -MT"system/Source/cmsis/vectors_stm32f401xc.o" -c -o "system/Source/cmsis/vectors_stm32f401xc.o" "../system/Source/cmsis/vectors_stm32f401xc.c"
+'Finished building: ../system/Source/cmsis/vectors_stm32f401xc.c'
+' '
+'Building file: ../Source/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../Inculde" -I"../system/Inculde" -I"../system/Inculde/cmsis" -I"../system/Inculde/stm32f4-hal" -std=gnu11 -MMD -MP -MF"Source/main.d" -MT"Source/main.o" -c -o "Source/main.o" "../Source/main.c"
+'Finished building: ../Source/main.c'
+' '
+'Building target: BlackPill_stm32f401cc.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BlackPill_stm32f401cc.map" --specs=nano.specs -o "BlackPill_stm32f401cc.elf" ./system/Source/stm32f4-hal/stm32f4xx_hal.o ./system/Source/stm32f4-hal/stm32f4xx_hal_adc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_adc_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_can.o ./system/Source/stm32f4-hal/stm32f4xx_hal_cec.o ./system/Source/stm32f4-hal/stm32f4xx_hal_cortex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_crc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_cryp.o ./system/Source/stm32f4-hal/stm32f4xx_hal_cryp_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dac.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dac_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dcmi.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dcmi_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dfsdm.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dma.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dma2d.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dma_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_dsi.o ./system/Source/stm32f4-hal/stm32f4xx_hal_eth.o ./system/Source/stm32f4-hal/stm32f4xx_hal_exti.o ./system/Source/stm32f4-hal/stm32f4xx_hal_flash.o ./system/Source/stm32f4-hal/stm32f4xx_hal_flash_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_flash_ramfunc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c.o ./system/Source/stm32f4-hal/stm32f4xx_hal_fmpi2c_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_fmpsmbus.o ./system/Source/stm32f4-hal/stm32f4xx_hal_gpio.o ./system/Source/stm32f4-hal/stm32f4xx_hal_hash.o ./system/Source/stm32f4-hal/stm32f4xx_hal_hash_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_hcd.o ./system/Source/stm32f4-hal/stm32f4xx_hal_i2c.o ./system/Source/stm32f4-hal/stm32f4xx_hal_i2c_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_i2s.o ./system/Source/stm32f4-hal/stm32f4xx_hal_i2s_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_irda.o ./system/Source/stm32f4-hal/stm32f4xx_hal_iwdg.o ./system/Source/stm32f4-hal/stm32f4xx_hal_lptim.o ./system/Source/stm32f4-hal/stm32f4xx_hal_ltdc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_ltdc_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_mmc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_nand.o ./system/Source/stm32f4-hal/stm32f4xx_hal_nor.o ./system/Source/stm32f4-hal/stm32f4xx_hal_pccard.o ./system/Source/stm32f4-hal/stm32f4xx_hal_pcd.o ./system/Source/stm32f4-hal/stm32f4xx_hal_pcd_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_pwr.o ./system/Source/stm32f4-hal/stm32f4xx_hal_pwr_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_qspi.o ./system/Source/stm32f4-hal/stm32f4xx_hal_rcc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_rcc_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_rng.o ./system/Source/stm32f4-hal/stm32f4xx_hal_rtc.o ./system/Source/stm32f4-hal/stm32f4xx_hal_rtc_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_sai.o ./system/Source/stm32f4-hal/stm32f4xx_hal_sai_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_sd.o ./system/Source/stm32f4-hal/stm32f4xx_hal_sdram.o ./system/Source/stm32f4-hal/stm32f4xx_hal_smartcard.o ./system/Source/stm32f4-hal/stm32f4xx_hal_smbus.o ./system/Source/stm32f4-hal/stm32f4xx_hal_spdifrx.o ./system/Source/stm32f4-hal/stm32f4xx_hal_spi.o ./system/Source/stm32f4-hal/stm32f4xx_hal_sram.o ./system/Source/stm32f4-hal/stm32f4xx_hal_tim.o ./system/Source/stm32f4-hal/stm32f4xx_hal_tim_ex.o ./system/Source/stm32f4-hal/stm32f4xx_hal_uart.o ./system/Source/stm32f4-hal/stm32f4xx_hal_usart.o ./system/Source/stm32f4-hal/stm32f4xx_hal_wwdg.o ./system/Source/stm32f4-hal/stm32f4xx_ll_adc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_crc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_dac.o ./system/Source/stm32f4-hal/stm32f4xx_ll_dma.o ./system/Source/stm32f4-hal/stm32f4xx_ll_dma2d.o ./system/Source/stm32f4-hal/stm32f4xx_ll_exti.o ./system/Source/stm32f4-hal/stm32f4xx_ll_fmc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_fmpi2c.o ./system/Source/stm32f4-hal/stm32f4xx_ll_fsmc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_gpio.o ./system/Source/stm32f4-hal/stm32f4xx_ll_i2c.o ./system/Source/stm32f4-hal/stm32f4xx_ll_lptim.o ./system/Source/stm32f4-hal/stm32f4xx_ll_pwr.o ./system/Source/stm32f4-hal/stm32f4xx_ll_rcc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_rng.o ./system/Source/stm32f4-hal/stm32f4xx_ll_rtc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_sdmmc.o ./system/Source/stm32f4-hal/stm32f4xx_ll_spi.o ./system/Source/stm32f4-hal/stm32f4xx_ll_tim.o ./system/Source/stm32f4-hal/stm32f4xx_ll_usart.o ./system/Source/stm32f4-hal/stm32f4xx_ll_usb.o ./system/Source/stm32f4-hal/stm32f4xx_ll_utils.o  ./system/Source/newlib/assert.o ./system/Source/newlib/cxx.o ./system/Source/newlib/exit.o ./system/Source/newlib/sbrk.o ./system/Source/newlib/startup.o ./system/Source/newlib/syscalls.o  ./system/Source/diag/trace-impl.o ./system/Source/diag/trace.o  ./system/Source/cortexm/exception-handlers.o ./system/Source/cortexm/initialize-hardware.o ./system/Source/cortexm/reset-hardware.o  ./system/Source/cmsis/system_stm32f4xx.o ./system/Source/cmsis/vectors_stm32f401xc.o  ./Source/main.o   
+'Finished building target: BlackPill_stm32f401cc.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BlackPill_stm32f401cc.elf"  "BlackPill_stm32f401cc.hex"
+'Finished building: BlackPill_stm32f401cc.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BlackPill_stm32f401cc.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4475	    160	    412	   5047	   13b7	BlackPill_stm32f401cc.elf
+'Finished building: BlackPill_stm32f401cc.siz'
+' '
