@@ -112,8 +112,8 @@ GPIO_CONFIG_t;
 */
 typedef enum 
 {
-    PIN_STATE_LOW  =0,
-    PIN_STATE_HIGH =1
+    PIN_STATE_LOW  =0xFFFFFFF0,
+    PIN_STATE_HIGH =0x00000001
 }
 PIN_STATE_t;
 /**********************************   API's ************************************************/
