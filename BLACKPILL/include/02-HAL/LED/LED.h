@@ -22,8 +22,8 @@
 */
 typedef enum 
 {
-    HAL_NOK=0,
-    HAL_OK=1
+    LED_NOK=0,
+    LED_OK=1
 }LED_Error_t;
 
 /**

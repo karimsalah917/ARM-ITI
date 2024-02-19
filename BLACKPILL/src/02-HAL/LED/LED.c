@@ -14,15 +14,28 @@
 #include "../../../include/01-MCAL/GPIO/GPIO.h"
 #include "../../../include/02-HAL/LED/LED.h"
 /********************************** Definitions ********************************************/
-
+/*none*/
 /**********************************  Types  ************************************************/
-
+/*none*/
+/*********************************** variables *********************************************/
+ extern const LED_CONFG_t LEDARR[_LED_enum];
 /******************************** Implementation *******************************************/
+
 LED_Error_t LED_INIT(void)
 {
+    GPIO_CONFIG_t LED; //creating instance of GPIO configuration struct
+    LED.MODE=GPIO_MODE_OUT_PP_FL; //setting the mode as output pushpull
+    LED.SPEED=GPIO_SPEED_HIGH; //setting speed high
 
+    for(uint8 IDX=0;IDX<_LED_enum;IDX++) //looping to configure all leds
+    {
+        LED.PORT=LEDARR[IDX].PORT;
+        LED.PIN=LEDARR[IDX].PIN;
+        GPIO_INIT_PIN(&LED);
+    }
+    return LED_OK;
 }
 LED_Error_t LED_SetStatus(LEDS_t COPY_LED_NAME,LED_Status_t COPY_LED_STATUS)
 {
-    
+
 }

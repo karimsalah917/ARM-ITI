@@ -20,7 +20,7 @@
 /**
  * @brief Array filled with user defined leds to set it's configuration
 */
-const LED_CONFG_t LED[_LED_enum]=
+const LED_CONFG_t LEDARR[_LED_enum]=
 {
     [BuiltInLED]=
     {
