@@ -18,7 +18,18 @@
 /********************************** variables **********************************************/
 
 /**
- * @brief Array filled with user defined leds to set it's configuration
+ * @brief Array containing user-defined LEDs and their configurations.
+ * 
+ * @warning Ensure you have appended your LED name to the enum called LEDS_t in the LED_Config.h file.
+ * 
+ * @example An example to enable and disable the built-in lamp:
+ * 
+ *          [BuiltInLED]=
+ *          {
+ *              .PORT=LED_PORTC,
+ *              .PIN=LED_PIN13,
+ *              .Connection=LED_Connection_ActiveLow
+ *          }
 */
 const LED_CONFG_t LEDARR[_LED_enum]=
 {

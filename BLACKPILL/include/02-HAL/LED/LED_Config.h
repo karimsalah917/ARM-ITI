@@ -17,14 +17,14 @@
 /**********************************   Types ************************************************/
 
 /**
- * @brief Created Data Type to define each led in your system so you can deal with
- * each led name in the application layer 
+ * @brief Defines a data type to represent each LED in the system,
+ * allowing easier handling of LED names in the application layer.
 */
 typedef enum 
 {
-    BuiltInLED,
-    _LED_enum
-}LEDS_t;
+    BuiltInLED, /**< Represents the built-in LED */
+    _LED_enum   /**< Enumeration boundary marker */
+} LEDS_t;
 
 
 

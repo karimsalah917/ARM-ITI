@@ -76,6 +76,11 @@ void main(int argc, char* argv[])
   LED_SetStatus(BuiltInLED,LED_ON);
   LED_SetStatus(BuiltInLED,LED_OFF);
   trace_printf("Hello world\n");
+  trace_printf("Hello world\n");
+  trace_printf("Hello world\n");
+  trace_printf("Hello world\n");
+  trace_printf("Hello world\n");
+  trace_printf("Hello world\n");
   // Infinite loop
   while (1)
     {

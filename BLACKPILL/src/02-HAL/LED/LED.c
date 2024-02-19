@@ -18,7 +18,7 @@
 /**********************************  Types  ************************************************/
 /*none*/
 /*********************************** variables *********************************************/
- extern const LED_CONFG_t LEDARR[_LED_enum];
+ extern const LED_CONFG_t LEDARR[_LED_enum]; // the configuration array in config.c file
 /******************************** Implementation *******************************************/
 
 LED_Error_t LED_INIT(void)
