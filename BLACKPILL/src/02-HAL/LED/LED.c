@@ -37,5 +37,20 @@ LED_Error_t LED_INIT(void)
 }
 LED_Error_t LED_SetStatus(LEDS_t COPY_LED_NAME,LED_Status_t COPY_LED_STATUS)
 {
-
+    LED_Error_t retValue=LED_NOK;
+    switch (COPY_LED_STATUS)
+    {
+    case LED_ON:
+    GPIO_SetPinValue(LEDARR[COPY_LED_NAME].PORT,LEDARR[COPY_LED_NAME].PIN,LEDARR[COPY_LED_NAME].Connection);
+    retValue=LED_OK;
+        break;
+     case LED_OFF:
+    GPIO_SetPinValue(LEDARR[COPY_LED_NAME].PORT,LEDARR[COPY_LED_NAME].PIN,~(LEDARR[COPY_LED_NAME].Connection));
+    retValue=LED_OK;
+        break;   
+    default:
+    retValue=LED_NOK;
+        break;
+    }
+    return retValue;
 }
