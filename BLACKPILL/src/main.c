@@ -33,6 +33,7 @@
 #include "../include/01-MCAL/RCC/RCC.h"
 #include "../include/00-LIB/STD.h"
 #include "../include/01-MCAL/GPIO/GPIO.h"
+#include "../include/02-HAL/LED/LED.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -67,66 +68,14 @@ void main(int argc, char* argv[])
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOC);
-
-  GPIO_CONFIG_t LED1 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN0,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-  GPIO_CONFIG_t LED2 =
-  {
-    .PORT=GPIO_PORTB,
-    .PIN=GPIO_PIN1,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-    GPIO_CONFIG_t LED3 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN2,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-    GPIO_CONFIG_t LED4 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN3,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-    GPIO_CONFIG_t LED5 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN4,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-    GPIO_CONFIG_t LED6 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN5,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-    GPIO_CONFIG_t LED7 =
-  {
-    .PORT=GPIO_PORTA,
-    .PIN=GPIO_PIN6,
-    .MODE=GPIO_MODE_OUT_PP_FL,
-    .SPEED=GPIO_SPEED_MED
-  };
-  GPIO_INIT_PIN(&LED1);
-  GPIO_INIT_PIN(&LED2);
-  GPIO_INIT_PIN(&LED3);
-  GPIO_INIT_PIN(&LED4);
-  GPIO_INIT_PIN(&LED5);
-  GPIO_INIT_PIN(&LED6);
-  GPIO_INIT_PIN(&LED7);
-
-
-
+  LED_INIT();
+  LED_SetStatus(BuiltInLED,LED_ON);
+  LED_SetStatus(BuiltInLED,LED_OFF);
+  LED_SetStatus(BuiltInLED,LED_ON);
+  LED_SetStatus(BuiltInLED,LED_OFF);
+  LED_SetStatus(BuiltInLED,LED_ON);
+  LED_SetStatus(BuiltInLED,LED_OFF);
+  trace_printf("Hello world\n");
   // Infinite loop
   while (1)
     {

@@ -26,6 +26,6 @@ const LED_CONFG_t LEDARR[_LED_enum]=
     {
         .PORT=LED_PORTC,
         .PIN=LED_PIN13,
-        .Connection=LED_Connection_ActiveHIGH
+        .Connection=LED_Connection_ActiveLow
     }
 };

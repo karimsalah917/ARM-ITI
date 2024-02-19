@@ -35,6 +35,8 @@ CPP_DEPS :=
 SUBDIRS := \
 src/01-MCAL/GPIO \
 src/01-MCAL/RCC \
+src/02-HAL/LED \
+src/02-HAL/SWITCH \
 src \
 system/src/cmsis \
 system/src/cortexm \
