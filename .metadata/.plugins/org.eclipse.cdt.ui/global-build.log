@@ -373,3 +373,11 @@ arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
    5007	    160	    412	   5579	   15cb	BLACKPILL.elf
 'Finished building: BLACKPILL.siz'
 ' '
+21:41:29 **** Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5007	    160	    412	   5579	   15cb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
