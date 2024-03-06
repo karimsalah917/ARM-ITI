@@ -35,6 +35,14 @@ NVIC_Pending_status_Cleared=0,
 NVIC_Pending_status_Set
 }NVIC_Pending_status_t;
 
+typedef enum {
+    GRPn_16_None,
+    GRPn_8_2,
+    GRPn_4_4,
+    GRPn_2_8,
+    GRPn_None_16
+}GRPn_t; 
+
 /**********************************   API's ************************************************/
 
 /**
@@ -95,4 +103,16 @@ NVIC_Error_t NVIC_SetPriority(IRQn_t IRQn, uint32 priority);
  * @return NVIC_Error_t Error status indicating the success or failure of the operation.
  */
 NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority);
+
+/**
+ * @brief Sets the priority grouping field in the Nested Vectored Interrupt Controller (NVIC).
+ *
+ * This function sets the priority grouping field in the NVIC, which determines how the priority of interrupts is divided into preemption priority and subpriority. 
+ * The priority grouping affects the assignment of interrupt priorities and determines the number of bits used for preemption priority and subpriority.
+ *
+ * @param GRPn The priority grouping value to be set, specified by a value of the enumeration type GRPn_t.
+ *
+ * @return NVIC_Error_t Error status indicating the success or failure of the operation.
+ */
+NVIC_Error_t NVIC_SetPriorityGrouping(GRPn_t GRPn);
 
