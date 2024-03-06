@@ -4,7 +4,7 @@
 /* Module       : NVIC                                                                     */
 /* Version      : v1.0                                                                     */
 /* Date         : 05/03/2024                                                               */
-/* File Details : Header file of NVIC Driver                                               */
+/* File Details : Header file for Interrupts in stm32f401cc board                          */
 /* Target       : STM32f401cc and may be compatbale with any target with M3/M4 MProcessor  */
 /*******************************************************************************************/
 /********************************** Includes ***********************************************/
