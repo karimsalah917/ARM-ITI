@@ -10,7 +10,9 @@
 /********************************** Includes ***********************************************/
 #include "../../../include/01-MCAL/NVIC/NVIC.h"
 /********************************** Definitions ********************************************/
-
+#define NVIC_Base_ADDRESS            0xE000E100 /* Base address of NVIC peripheral */
+#define SCB_Base_ADDRESS             0xE000ED00 /* Base address of SCB peripheral */
+#define InterruptsPerRegister        32
 /**********************************  Types  ************************************************/
 typedef struct
 {
@@ -63,7 +65,78 @@ typedef struct
 } SCB_PERI_t;
 
 /**********************************  Variables *********************************************/
+volatile NVIC_PERI_t* const NVIC=(volatile NVIC_PERI_t*)NVIC_Base_ADDRESS;
+volatile SCB_PERI_t* const SCB=(volatile SCB_PERI_t*)SCB_Base_ADDRESS;
 
 /********************************** Static Functions ***************************************/
 
 /********************************** Implementation *****************************************/
+
+NVIC_Error_t NVIC_EnableIRQ(IRQn_t IRQn){
+    NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=IRQn/InterruptsPerRegister;
+    
+    if(IRQn>_INT_Num){
+        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    }
+    else
+    {
+        NVIC->NVIC_ISER[Local_index]=(1<<(IRQn%InterruptsPerRegister));
+    }
+    return Loc_returnValue;
+
+}
+
+NVIC_Error_t NVIC_DisableIRQ(IRQn_t IRQn){
+    NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=IRQn/InterruptsPerRegister;
+    
+    if(IRQn>_INT_Num){
+        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    }
+    else
+    {
+        NVIC->NVIC_ICER[Local_index]=(1<<(IRQn%InterruptsPerRegister));
+    }
+    return Loc_returnValue;
+}
+NVIC_Error_t NVIC_SetPendingIRQ(IRQn_t IRQn){
+    NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=IRQn/InterruptsPerRegister;
+    
+    if(IRQn>_INT_Num){
+        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    }
+    else
+    {
+        NVIC->NVIC_ISPR[Local_index]=(1<<(IRQn%InterruptsPerRegister));
+    }
+    return Loc_returnValue;
+}
+
+NVIC_Error_t NVIC_ClearPendingIRQ(IRQn_t IRQn){
+    NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=IRQn/InterruptsPerRegister;
+    
+    if(IRQn>_INT_Num){
+        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    }
+    else
+    {
+        NVIC->NVIC_ICPR[Local_index]=(1<<(IRQn%InterruptsPerRegister));
+    }
+    return Loc_returnValue;
+}
+
+NVIC_Error_t NVIC_GetPendingIRQ(IRQn_t IRQn, NVIC_Pending_status_t *Pending){
+
+}
+NVIC_Error_t NVIC_SetPriority(IRQn_t IRQn, uint32 priority){
+
+}
+NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority){
+
+}
+NVIC_Error_t NVIC_SetPriorityGrouping(GRPn_t GRPn){
+    
+}
