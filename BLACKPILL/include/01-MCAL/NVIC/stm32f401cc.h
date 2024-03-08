@@ -31,7 +31,7 @@ typedef enum
   FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
   RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
   EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
-  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                              */
+  EXTI1_IRQn                  =7 ,      /*!< EXTI Line1 Interrupt                                              */
   EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
   EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
   EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */

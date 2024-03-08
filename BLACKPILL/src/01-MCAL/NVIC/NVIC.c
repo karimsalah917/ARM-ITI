@@ -13,6 +13,11 @@
 #define NVIC_Base_ADDRESS            0xE000E100 /* Base address of NVIC peripheral */
 #define SCB_Base_ADDRESS             0xE000ED00 /* Base address of SCB peripheral */
 #define InterruptsPerRegister        32
+
+#define SCB_ClearGroupingBits        0xFFFF8FFF
+
+#define NVIC_IPR_Clear               0xFFFFFFF0
+
 /**********************************  Types  ************************************************/
 typedef struct
 {
@@ -76,8 +81,8 @@ NVIC_Error_t NVIC_EnableIRQ(IRQn_t IRQn){
     NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
     uint8 Local_index=IRQn/InterruptsPerRegister;
     
-    if(IRQn>_INT_Num){
-        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    if(IRQn>=_INT_Num){
+        Loc_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }
     else
     {
@@ -91,8 +96,8 @@ NVIC_Error_t NVIC_DisableIRQ(IRQn_t IRQn){
     NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
     uint8 Local_index=IRQn/InterruptsPerRegister;
     
-    if(IRQn>_INT_Num){
-        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    if(IRQn>=_INT_Num){
+        Loc_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }
     else
     {
@@ -104,8 +109,8 @@ NVIC_Error_t NVIC_SetPendingIRQ(IRQn_t IRQn){
     NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
     uint8 Local_index=IRQn/InterruptsPerRegister;
     
-    if(IRQn>_INT_Num){
-        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    if(IRQn>=_INT_Num){
+        Loc_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }
     else
     {
@@ -118,8 +123,8 @@ NVIC_Error_t NVIC_ClearPendingIRQ(IRQn_t IRQn){
     NVIC_Error_t Loc_returnValue=NVIC_ERROR_OK;
     uint8 Local_index=IRQn/InterruptsPerRegister;
     
-    if(IRQn>_INT_Num){
-        Loc_returnValue=NVIC_ERROR_OUT_OF_RANGE;
+    if(IRQn>=_INT_Num){
+        Loc_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }
     else
     {
@@ -128,15 +133,72 @@ NVIC_Error_t NVIC_ClearPendingIRQ(IRQn_t IRQn){
     return Loc_returnValue;
 }
 
-NVIC_Error_t NVIC_GetPendingIRQ(IRQn_t IRQn, NVIC_Pending_status_t *Pending){
-
+NVIC_Error_t NVIC_GetPendingIRQ(IRQn_t IRQn, NVIC_PendingStatus_t *Pending){
+    NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=(IRQn>>5);
+    if(IRQn>=_INT_Num)
+    {
+        Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
+    }else{
+        *Pending=(NVIC->NVIC_ISPR[Local_index])&(0x00000001<<(IRQn%InterruptsPerRegister));
+    }
+    return Local_returnValue;
 }
+NVIC_Error_t NVIC_GetActive (IRQn_t IRQn,uint32* Activity){
+    NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+    uint8 Local_index=(IRQn>>5);
+    if(IRQn>=_INT_Num)
+    {
+        Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
+    }else{
+        *Activity=(NVIC->NVIC_IABR[Local_index])&(0x00000001<<(IRQn%InterruptsPerRegister));
+    }
+    return Local_returnValue;
+}
+
 NVIC_Error_t NVIC_SetPriority(IRQn_t IRQn, uint32 priority){
-
+    NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+    uint8 Local_Index=IRQn>>2;//devide by 4
+    if(IRQn>=_INT_Num){
+        Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
+    }else{
+        uint32 Local_IPR=NVIC->NVIC_IPR[Local_Index]; // reading the register in local variable
+        Local_IPR &=(NVIC_IPR_Clear<<(IRQn%4));       // Clearing the coresponding bits before adding the new changes
+        Local_IPR |=(priority<<(IRQn%4));             // Adding the new changes to the local variable
+        NVIC->NVIC_IPR[Local_Index]=Local_IPR;        // Adding the new changes to the physical register
+    }
+    return Local_returnValue;
 }
+
+NVIC_Error_t NVIC_SetPriorityGrouping(NVIC_PriorityGroup_t PriorityGroup){
+
+    //validation to check that the group is right
+    NVIC_Error_t Local_returnValue= NVIC_ERROR_OK;
+    if((PriorityGroup>=_Priotiy_Group)||(PriorityGroup<NVIC_PriorityGroup_0)){
+        Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
+    }
+    else{
+        uint32 Local_scbAIRCE =           SCB->AIRCR;  //Read the register value and store it in a local variable
+        Local_scbAIRCE       &=SCB_ClearGroupingBits;  //Clearing the needed bits before setting
+        Local_scbAIRCE       |=PriorityGroup        ;  //Apply Chosen Group Changes to the local Register
+        SCB->AIRCR            =Local_scbAIRCE       ;  //Apply the changes to the physical register
+    }
+    return Local_returnValue;
+}
+NVIC_Error_t NVIC_GetPriorityGrouping(uint32* PriorityGroup){
+    *PriorityGroup=(SCB->AIRCR);
+    return NVIC_ERROR_OK;
+}
+
 NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority){
-
+    NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+    uint8 Local_Index=IRQn>>2;//devide by 4
+    if(IRQn>=_INT_Num){
+        Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
+    }else{
+        *priority=((NVIC->NVIC_IPR[Local_Index])>>(IRQn%4))&(~NVIC_IPR_Clear); // reading the register in local variable
+    }
 }
-NVIC_Error_t NVIC_SetPriorityGrouping(GRPn_t GRPn){
-    
+NVIC_Error_t NVIC_SystemReset (void){
+
 }

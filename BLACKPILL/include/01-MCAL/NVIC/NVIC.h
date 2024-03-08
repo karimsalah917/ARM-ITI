@@ -30,18 +30,74 @@ typedef enum {
     NVIC_ERROR_INTERRUPT_ALREADY_DISABLED  /**< Specified interrupt already disabled */
 } NVIC_Error_t;
 
+/**
+ * @brief Enumeration for NVIC Pending Interrupt Status
+ *
+ * This enumeration defines the possible pending status of interrupts in the 
+ * Nested Vectored Interrupt Controller (NVIC) of ARM Cortex-M processors.
+ * 
+ * Values:
+ * - NVIC_PendingStatus_Cleared: Indicates that the interrupt is not pending.
+ * - NVIC_PendingStatus_Set: Indicates that the interrupt is pending.
+ *
+ * Example usage:
+ * NVIC_Pending_status_t status = NVIC_PendingStatus_Cleared; // Set status to cleared
+ */
 typedef enum {
-NVIC_Pending_status_Cleared=0,
-NVIC_Pending_status_Set
-}NVIC_Pending_status_t;
+    NVIC_PendingStatus_Cleared = 0,
+    NVIC_PendingStatus_Set
+} NVIC_PendingStatus_t;
 
+
+/**
+ * @brief Enumeration for NVIC Priority Grouping Options
+ *
+ * @details This enumeration defines different options for setting the priority grouping of interrupts
+ * in the Nested Vectored Interrupt Controller (NVIC) of ARM Cortex-M processors. Each option
+ * corresponds to a specific priority grouping value to be written to the AIRCR register of
+ * the System Control Block (SCB).
+ * 
+ * The priority grouping determines how the priority of interrupts is organized and affects
+ * how they are handled in the system.
+ * 
+ * Values:
+ * - NVIC_PriorityGroup_0: Priority grouping 0, consisting of 7 bits for the group priority
+ *                        and 1 bit for the subgroup priority.
+ * - NVIC_PriorityGroup_1: Priority grouping 1, consisting of 6 bits for the group priority
+ *                        and 2 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_2: Priority grouping 2, consisting of 5 bits for the group priority
+ *                        and 3 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_3: Priority grouping 3, consisting of 4 bits for the group priority
+ *                        and 4 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_4: Priority grouping 4, consisting of 3 bits for the group priority
+ *                        and 5 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_5: Priority grouping 5, consisting of 2 bits for the group priority
+ *                        and 6 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_6: Priority grouping 6, consisting of 1 bit for the group priority
+ *                        and 7 bits for the subgroup priority.
+ * - NVIC_PriorityGroup_7: Priority grouping 7, consisting of 0 bits for the group priority
+ *                        and 8 bits for the subgroup priority.
+ *
+ * @warning: The actual implementation of priority grouping may vary depending on the target device. 
+ * Some ARM Cortex-M based microcontrollers, such as the STM32 series, might not support all 
+ * priority grouping options. It is essential to consult the specific device datasheet and 
+ * reference manual to determine the supported priority grouping options.
+ *
+ * Example usage (for STM32):
+ * NVIC_SetPriorityGrouping(NVIC_PriorityGroup_3); // Set priority grouping to Group 3
+ */
 typedef enum {
-    GRPn_16_None,
-    GRPn_8_2,
-    GRPn_4_4,
-    GRPn_2_8,
-    GRPn_None_16
-}GRPn_t; 
+    NVIC_PriorityGroup_0 = 0x05FA0000, // 7 bits for group and 1 bit for subgroup   (no supported at stm32)
+    NVIC_PriorityGroup_1 = 0x05FA0100, // 6 bits for group and 2 bits for subgroup  (no supported at stm32)
+    NVIC_PriorityGroup_2 = 0x05FA0200, // 5 bits for group and 3 bits for subgroup  (no supported at stm32)
+    NVIC_PriorityGroup_3 = 0x05FA0300, // 4 bits for group and 4 bits for subgroup  (supported at stm32   )
+    NVIC_PriorityGroup_4 = 0x05FA0400, // 3 bits for group and 5 bits for subgroup  (supported at stm32   )
+    NVIC_PriorityGroup_5 = 0x05FA0500, // 2 bits for group and 6 bits for subgroup  (supported at stm32   )
+    NVIC_PriorityGroup_6 = 0x05FA0600, // 1 bit for group and 7 bits for subgroup   (supported at stm32   )
+    NVIC_PriorityGroup_7 = 0x05FA0700,  // 0 bits for group and 8 bits for subgroup (supported at stm32   )
+    _Priotiy_Group
+} NVIC_PriorityGroup_t;
+
 
 /**********************************   API's ************************************************/
 
@@ -84,7 +140,7 @@ NVIC_Error_t NVIC_ClearPendingIRQ(IRQn_t IRQn);
  * @param Pending Pointer to a variable where the pending status will be stored.
  * @return NVIC_Error_t Error status indicating the success or failure of the operation.
  */
-NVIC_Error_t NVIC_GetPendingIRQ(IRQn_t IRQn, NVIC_Pending_status_t *Pending);
+NVIC_Error_t NVIC_GetPendingIRQ(IRQn_t IRQn, NVIC_PendingStatus_t *Pending);
 
 /**
  * @brief Sets the priority of the specified interrupt in the Nested Vectored Interrupt Controller (NVIC).
@@ -114,5 +170,5 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority);
  *
  * @return NVIC_Error_t Error status indicating the success or failure of the operation.
  */
-NVIC_Error_t NVIC_SetPriorityGrouping(GRPn_t GRPn);
+NVIC_Error_t NVIC_SetPriorityGrouping(NVIC_PriorityGroup_t PriorityGroup);
 
