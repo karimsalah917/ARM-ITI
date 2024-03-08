@@ -172,3 +172,8 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority);
  */
 NVIC_Error_t NVIC_SetPriorityGrouping(NVIC_PriorityGroup_t PriorityGroup);
 
+NVIC_Error_t NVIC_SystemReset (void);
+
+NVIC_Error_t NVIC_GetPriorityGrouping(uint32* PriorityGroup);
+
+NVIC_Error_t NVIC_GetActive (IRQn_t IRQn,uint32* Activity);
