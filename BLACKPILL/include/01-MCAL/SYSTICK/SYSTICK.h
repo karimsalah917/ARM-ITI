@@ -30,14 +30,28 @@ typedef void (*Handler_t) (void);
 /**********************************   API's ************************************************/
 
 
+
 /**
- * @brief Enables the SysTick counter.
+ * @brief Enables the SysTick counter in periodic mode.
  * 
- * This function enables the SysTick timer to start counting.
+ * This function configures the SysTick timer to operate in periodic mode,
+ * where it continuously counts and generates interrupts at regular intervals.
  * 
  * @return SysTick_Error_t Error code indicating success or failure of the operation.
  */
-SysTick_Error_t SysTick_EnableCounter(void);
+SysTick_Error_t SysTick_EnableCounterPeriodic(void);
+
+/**
+ * @brief Enables the SysTick counter in one-shot mode.
+ * 
+ * This function configures the SysTick timer to operate in one-shot mode,
+ * where it counts down from its initial value to zero, generates an interrupt,
+ * and then stops counting until re-enabled.
+ * 
+ * @return SysTick_Error_t Error code indicating success or failure of the operation.
+ */
+SysTick_Error_t SysTick_EnableCounterOneShot(void);
+
 
 /**
  * @brief Disables the SysTick counter.
@@ -90,3 +104,4 @@ SysTick_Error_t SysTick_SetTimeMS(uint32 Time);
  * @return SysTick_Error_t Error code indicating success or failure of the operation.
  */
 SysTick_Error_t SysTick_SetCallBack(Handler_t handler);
+
