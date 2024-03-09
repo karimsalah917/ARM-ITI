@@ -63,8 +63,20 @@ SysTick_Error_t SysTick_SetClockSource(SysTick_ClockSource_t ClockSource){
     }
     else
     {
-        
+        switch (ClockSource)
+        {
+        case SysTick_CLOCK_SOURCE_AHB_8:
+            SysTick->STK_CTRL &=~STK_CTRL_CLKSOURCE_BIT;
+            break;
+        case SysTick_CLOCK_SOURCE_AHB:
+            SysTick->STK_CTRL |=STK_CTRL_CLKSOURCE_BIT;
+            break;
+        default:
+        Local_ReturnValue=SYSTICK_ERROR_NOK:
+            break;
+        }
     }
+    return Local_ReturnValue;
 }
 
 SysTick_Error_t SysTick_SetTimeMS(uint32 Time){}
