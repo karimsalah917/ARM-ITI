@@ -1259,6 +1259,50 @@ Discarded input sections
                 0x00000000       0x18 ./src/01-MCAL/RCC/RCC.o
  .debug_macro   0x00000000      0x898 ./src/01-MCAL/RCC/RCC.o
  .debug_macro   0x00000000       0x10 ./src/01-MCAL/RCC/RCC.o
+ .group         0x00000000        0x8 ./src/01-MCAL/NVIC/NVIC.o
+ .group         0x00000000        0x8 ./src/01-MCAL/NVIC/NVIC.o
+ .text          0x00000000        0x0 ./src/01-MCAL/NVIC/NVIC.o
+ .data          0x00000000        0x0 ./src/01-MCAL/NVIC/NVIC.o
+ .bss           0x00000000        0x0 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_EnableIRQ
+                0x00000000       0x3c ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_DisableIRQ
+                0x00000000       0x40 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_SetPendingIRQ
+                0x00000000       0x40 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_ClearPendingIRQ
+                0x00000000       0x40 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_GetPendingIRQ
+                0x00000000       0x40 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_GetActive
+                0x00000000       0x38 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_SetPriority
+                0x00000000       0x50 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_SetPriorityGrouping
+                0x00000000       0x28 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_GetPriorityGrouping
+                0x00000000       0x10 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_GetPriority
+                0x00000000       0x34 ./src/01-MCAL/NVIC/NVIC.o
+ .text.NVIC_SystemReset
+                0x00000000        0x4 ./src/01-MCAL/NVIC/NVIC.o
+ .rodata.SCB    0x00000000        0x4 ./src/01-MCAL/NVIC/NVIC.o
+ .rodata.NVIC   0x00000000        0x4 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_info    0x00000000      0x83d ./src/01-MCAL/NVIC/NVIC.o
+ .debug_abbrev  0x00000000      0x17e ./src/01-MCAL/NVIC/NVIC.o
+ .debug_loc     0x00000000      0x4db ./src/01-MCAL/NVIC/NVIC.o
+ .debug_aranges
+                0x00000000       0x70 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_ranges  0x00000000       0x60 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_macro   0x00000000       0x40 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_macro   0x00000000      0x898 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_macro   0x00000000       0x10 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_line    0x00000000      0x1c1 ./src/01-MCAL/NVIC/NVIC.o
+ .debug_str     0x00000000     0x2e8e ./src/01-MCAL/NVIC/NVIC.o
+ .comment       0x00000000       0x6f ./src/01-MCAL/NVIC/NVIC.o
+ .debug_frame   0x00000000       0xec ./src/01-MCAL/NVIC/NVIC.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/01-MCAL/NVIC/NVIC.o
  .group         0x00000000        0x8 ./src/01-MCAL/GPIO/GPIO.o
  .group         0x00000000        0x8 ./src/01-MCAL/GPIO/GPIO.o
  .text          0x00000000        0x0 ./src/01-MCAL/GPIO/GPIO.o
@@ -1423,6 +1467,7 @@ LOAD ./src/02-HAL/SWITCH/SWITCH_Config.o
 LOAD ./src/02-HAL/LED/LED.o
 LOAD ./src/02-HAL/LED/LED_Config.o
 LOAD ./src/01-MCAL/RCC/RCC.o
+LOAD ./src/01-MCAL/NVIC/NVIC.o
 LOAD ./src/01-MCAL/GPIO/GPIO.o
 LOAD ./src/main.o
 LOAD e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libstdc++_nano.a
@@ -2014,7 +2059,7 @@ END GROUP
  .debug_abbrev  0x00000ea0      0x105 ./src/01-MCAL/GPIO/GPIO.o
  .debug_abbrev  0x00000fa5       0xcc ./src/main.o
 
-.debug_line     0x00000000     0x3f54
+.debug_line     0x00000000     0x3fc3
  *(.debug_line)
  .debug_line    0x00000000      0x2e0 ./system/src/newlib/exit.o
  .debug_line    0x000002e0      0x291 ./system/src/newlib/sbrk.o
@@ -2030,7 +2075,7 @@ END GROUP
  .debug_line    0x000037a6       0x86 ./src/02-HAL/LED/LED_Config.o
  .debug_line    0x0000382c      0x218 ./src/01-MCAL/RCC/RCC.o
  .debug_line    0x00003a44      0x10c ./src/01-MCAL/GPIO/GPIO.o
- .debug_line    0x00003b50      0x404 ./src/main.o
+ .debug_line    0x00003b50      0x473 ./src/main.o
 
 .debug_frame    0x00000000      0x8a8
  *(.debug_frame)
@@ -2140,7 +2185,7 @@ OUTPUT(BLACKPILL.elf elf32-littlearm)
  .debug_ranges  0x00000250       0x20 ./src/01-MCAL/GPIO/GPIO.o
  .debug_ranges  0x00000270       0x10 ./src/main.o
 
-.debug_macro    0x00000000    0x19267
+.debug_macro    0x00000000    0x19273
  .debug_macro   0x00000000      0x19c ./system/src/newlib/exit.o
  .debug_macro   0x0000019c      0x151 ./system/src/newlib/sbrk.o
  .debug_macro   0x000002ed      0x174 ./system/src/newlib/sbrk.o
@@ -2240,4 +2285,4 @@ OUTPUT(BLACKPILL.elf elf32-littlearm)
  .debug_macro   0x00018f7a       0x25 ./src/02-HAL/LED/LED_Config.o
  .debug_macro   0x00018f9f       0x58 ./src/01-MCAL/RCC/RCC.o
  .debug_macro   0x00018ff7       0x5a ./src/01-MCAL/GPIO/GPIO.o
- .debug_macro   0x00019051      0x216 ./src/main.o
+ .debug_macro   0x00019051      0x222 ./src/main.o

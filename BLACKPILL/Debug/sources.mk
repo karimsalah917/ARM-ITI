@@ -34,6 +34,7 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/01-MCAL/GPIO \
+src/01-MCAL/NVIC \
 src/01-MCAL/RCC \
 src/02-HAL/LED \
 src/02-HAL/SWITCH \

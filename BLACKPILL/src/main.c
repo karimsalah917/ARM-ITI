@@ -34,6 +34,7 @@
 #include "../include/00-LIB/STD.h"
 #include "../include/01-MCAL/GPIO/GPIO.h"
 #include "../include/02-HAL/LED/LED.h"
+#include "../include/01-MCAL/NVIC/NVIC.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).

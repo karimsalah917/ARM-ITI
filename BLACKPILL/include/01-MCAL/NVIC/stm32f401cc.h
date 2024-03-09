@@ -24,16 +24,16 @@ typedef enum
   PendSV_IRQn                 = -2,     /*!< 14 Cortex-M4 Pend SV Interrupt                                    */
   SysTick_IRQn                = -1,     /*!< 15 Cortex-M4 System Tick Interrupt                                */
 /**  STM32 specific Interrupt Numbers ************************/
-  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                                         */
-  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt                         */
-  TAMP_STAMP_IRQn             = 2,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
-  RTC_WKUP_IRQn               = 3,      /*!< RTC Wakeup interrupt through the EXTI line                        */
-  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                                            */
-  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                              */
-  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                              */
-  EXTI1_IRQn                  =7 ,      /*!< EXTI Line1 Interrupt                                              */
-  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                              */
-  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                              */
+  WWDG_IRQn                   = 0 ,      /*!< Window WatchDog Interrupt                                         */
+  PVD_IRQn                    = 1 ,      /*!< PVD through EXTI Line detection Interrupt                         */
+  TAMP_STAMP_IRQn             = 2 ,      /*!< Tamper and TimeStamp interrupts through the EXTI line             */
+  RTC_WKUP_IRQn               = 3 ,      /*!< RTC Wakeup interrupt through the EXTI line                        */
+  FLASH_IRQn                  = 4 ,      /*!< FLASH global Interrupt                                            */
+  RCC_IRQn                    = 5 ,      /*!< RCC global Interrupt                                              */
+  EXTI0_IRQn                  = 6 ,      /*!< EXTI Line0 Interrupt                                              */
+  EXTI1_IRQn                  = 7 ,      /*!< EXTI Line1 Interrupt                                              */
+  EXTI2_IRQn                  = 8 ,      /*!< EXTI Line2 Interrupt                                              */
+  EXTI3_IRQn                  = 9 ,      /*!< EXTI Line3 Interrupt                                              */
   EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                              */
   DMA1_Stream0_IRQn           = 11,     /*!< DMA1 Stream 0 global Interrupt                                    */
   DMA1_Stream1_IRQn           = 12,     /*!< DMA1 Stream 1 global Interrupt                                    */

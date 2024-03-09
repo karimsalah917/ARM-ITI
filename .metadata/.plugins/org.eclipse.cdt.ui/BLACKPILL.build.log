@@ -1,4 +1,4 @@
-21:41:29 **** Build of configuration Debug for project BLACKPILL ****
+18:21:56 **** Incremental Build of configuration Debug for project BLACKPILL ****
 make all 
 'Invoking: GNU Arm Cross Print Size'
 arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
@@ -7,5 +7,5 @@ arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
 'Finished building: BLACKPILL.siz'
 ' '
 
-21:41:31 Build Finished. 0 errors, 0 warnings. (took 1s.798ms)
+18:21:56 Build Finished. 0 errors, 0 warnings. (took 784ms)
 
