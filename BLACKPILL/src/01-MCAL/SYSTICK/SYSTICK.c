@@ -25,11 +25,13 @@ volatile SysTick_t* const SysTick =(volatile SysTick_t*)SysTick_BaseAddress;
 /********************************** Static Functions ***************************************/
 
 /********************************** Implementation *****************************************/
-SysTick_Error_t SysTick_EnableCounter(SysTick_CounterStatus_t CounterStatus){
-    
+SysTick_Error_t SysTick_EnableCounter(void){
 }
+SysTick_Error_t SysTick_DisableCounter(void){
+}
+SysTick_Error_t SysTick_EnableInterrupt(void){}
 
-SysTick_Error_t SysTick_EnableInterrupt(SysTick_InterruptStatus_t InterruptStatus){}
+SysTick_Error_t SysTick_DisableInterrupt(void){}
 
 SysTick_Error_t SysTick_SetClockSource(SysTick_ClockSource_t){}
 
