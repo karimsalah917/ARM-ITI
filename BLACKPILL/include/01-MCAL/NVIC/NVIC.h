@@ -201,3 +201,17 @@ NVIC_Error_t NVIC_GetPriorityGrouping(uint32* PriorityGroup);
   *           - NVIC_ERROR: Error occurred during activity status retrieval.
   */
 NVIC_Error_t NVIC_GetActive(IRQn_t IRQn, uint32* Activity);
+
+/**
+ * @brief Triggers a software interrupt for the specified IRQn.
+ *
+ * This function triggers a software interrupt for the specified IRQn.
+ * The IRQn parameter represents the interrupt number to trigger.
+ * Software interrupts can be used for inter-process communication or
+ * for signaling within the software.
+ *
+ * @param IRQn The interrupt number to trigger.
+ * @return NVIC_ERROR_OK if the operation is successful,
+ *         otherwise an appropriate error code indicating the failure.
+ */
+NVIC_Error_t NVIC_TriggerSoftwareInterrupt(IRQn_t IRQn);

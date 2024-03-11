@@ -56,15 +56,16 @@
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
   void DMA1_Stream1_IRQHandler(void)
-  {
 
+  {
+    NVIC_TriggerSoftwareInterrupt(DMA1_Stream2_IRQn);
+    //NVIC_TriggerSoftwareInterrupt(DMA1_Stream2_IRQn);
 	  trace_printf("hello this is higher prioirty interrupt int1\n");
 	  LED_SetStatus(TestLed2,LED_OFF);
   }
 
   void DMA1_Stream2_IRQHandler(void)
   {
-	  NVIC_SetPendingIRQ(DMA1_Stream1_IRQn);
 	  trace_printf("hello this is lower prioirty interrupt int0\n");
 	  LED_SetStatus(TestLed,LED_OFF);
 
@@ -87,13 +88,13 @@ void main(int argc, char* argv[])
   LED_SetStatus(TestLed2,LED_ON);
   NVIC_EnableIRQ(DMA1_Stream1_IRQn);
   NVIC_EnableIRQ(DMA1_Stream2_IRQn );  
-  NVIC_DisableIRQ(DMA1_Stream2_IRQn );  
+
   
   NVIC_SetPriorityGrouping(NVIC_PriorityGroup_4);
   NVIC_SetPriority(DMA1_Stream2_IRQn,0b10000000);
   NVIC_SetPriority(DMA1_Stream1_IRQn,0b01000000);
 
-  NVIC_SetPendingIRQ(DMA1_Stream2_IRQn);
+  NVIC_SetPendingIRQ(DMA1_Stream1_IRQn);
 
   // Infinite loop
   while (1)

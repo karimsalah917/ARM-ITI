@@ -18,6 +18,9 @@
 
 #define NVIC_IPR_Mask                0x00000011
 
+#define NVIC_STIRR               *((volatile uint32 *)0xE000EF00)
+
+
 /**********************************  Types  ************************************************/
 typedef struct
 {
@@ -203,3 +206,21 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority){
 NVIC_Error_t NVIC_SystemReset (void){
 
 }
+
+
+
+NVIC_Error_t NVIC_TriggerSoftwareInterrupt(IRQn_t IRQn) {
+    NVIC_Error_t Local_ReturnValue = NVIC_ERROR_OK;
+
+    // Check if IRQn is within the valid range
+    if (IRQn >= _INT_Num) {
+        Local_ReturnValue = NVIC_ERROR_INVALID_ARGUMENT;
+    } else {
+        // Ensure bits 31:9 are cleared and set bits 8:0 to the interrupt ID
+        uint32 stir_value = (IRQn & 0x1FF); // Mask to only keep bits 8:0
+        NVIC_STIRR = stir_value;
+    }
+
+    return Local_ReturnValue;
+}
+
