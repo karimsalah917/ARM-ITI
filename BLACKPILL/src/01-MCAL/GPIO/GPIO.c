@@ -26,6 +26,9 @@
 #define GPIO_OSPEEDR_RESETMASK                  0x00000003
 
 #define GPIO_IDR_MASK                           0x00000001
+
+#define GPIO_BSRR_SET_MASK                      0x00000001
+#define GPIO_BSRR_CLR_MASK                      0x00010000
 /**********************************   Types ************************************************/
 
 typedef struct
@@ -101,11 +104,11 @@ GPIO_Error_t GPIO_SetPinValue(GPIO_PORT_t  COPY_GPIO_PORT, GPIO_PIN_t COPY_GPIO_
     GPIO_Error_t RetValue=NOK;
     if(COPY_PIN_STATE==PIN_STATE_HIGH)
     {
-        GPIO[COPY_GPIO_PORT]->ODR |= (COPY_PIN_STATE<<COPY_GPIO_PIN);
+        GPIO[COPY_GPIO_PORT]->BSRR |= (GPIO_BSRR_SET_MASK<<COPY_GPIO_PIN);
         RetValue=OK;
     }else if (COPY_PIN_STATE==PIN_STATE_LOW)
     {
-        GPIO[COPY_GPIO_PORT]->ODR &= (COPY_PIN_STATE<<COPY_GPIO_PIN);
+        GPIO[COPY_GPIO_PORT]->BSRR |= (GPIO_BSRR_CLR_MASK<<COPY_GPIO_PIN);
         RetValue=OK;
     }
     

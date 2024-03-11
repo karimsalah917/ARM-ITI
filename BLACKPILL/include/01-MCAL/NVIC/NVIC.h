@@ -87,14 +87,14 @@ typedef enum {
  * NVIC_SetPriorityGrouping(NVIC_PriorityGroup_3); // Set priority grouping to Group 3
  */
 typedef enum {
-    NVIC_PriorityGroup_0 = 0x05FA0000, // 7 bits for group and 1 bit for subgroup   (no supported at stm32)
-    NVIC_PriorityGroup_1 = 0x05FA0100, // 6 bits for group and 2 bits for subgroup  (no supported at stm32)
-    NVIC_PriorityGroup_2 = 0x05FA0200, // 5 bits for group and 3 bits for subgroup  (no supported at stm32)
-    NVIC_PriorityGroup_3 = 0x05FA0300, // 4 bits for group and 4 bits for subgroup  (supported at stm32   )
-    NVIC_PriorityGroup_4 = 0x05FA0400, // 3 bits for group and 5 bits for subgroup  (supported at stm32   )
-    NVIC_PriorityGroup_5 = 0x05FA0500, // 2 bits for group and 6 bits for subgroup  (supported at stm32   )
-    NVIC_PriorityGroup_6 = 0x05FA0600, // 1 bit for group and 7 bits for subgroup   (supported at stm32   )
-    NVIC_PriorityGroup_7 = 0x05FA0700,  // 0 bits for group and 8 bits for subgroup (supported at stm32   )
+    NVIC_PriorityGroup_0 = 0x05FA0000, // 7 bits for group and 1 bit for subgroup   (no supported at stm32     )
+    NVIC_PriorityGroup_1 = 0x05FA0100, // 6 bits for group and 2 bits for subgroup  (no supported at stm32     )
+    NVIC_PriorityGroup_2 = 0x05FA0200, // 5 bits for group and 3 bits for subgroup  (no supported at stm32     )
+    NVIC_PriorityGroup_3 = 0x05FA0300, // 4 bits for group and 4 bits for subgroup  (supported at stm32 4G-0SG )
+    NVIC_PriorityGroup_4 = 0x05FA0400, // 3 bits for group and 5 bits for subgroup  (supported at stm32 3G-1SG )
+    NVIC_PriorityGroup_5 = 0x05FA0500, // 2 bits for group and 6 bits for subgroup  (supported at stm32 2G-2SG )
+    NVIC_PriorityGroup_6 = 0x05FA0600, // 1 bit for group and 7 bits for subgroup   (supported at stm32 1G-3SG )
+    NVIC_PriorityGroup_7 = 0x05FA0700,  // 0 bits for group and 8 bits for subgroup (supported at stm32 0G-4SG )
     _Priotiy_Group
 } NVIC_PriorityGroup_t;
 
@@ -172,8 +172,32 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority);
  */
 NVIC_Error_t NVIC_SetPriorityGrouping(NVIC_PriorityGroup_t PriorityGroup);
 
-NVIC_Error_t NVIC_SystemReset (void);
+/**
+  * @brief  Perform a system reset.
+  * @note   This function initiates a system reset.
+  * @retval NVIC_Error_t value:
+  *           - NVIC_OK: System reset initiated successfully.
+  *           - NVIC_ERROR: Error occurred during system reset initiation.
+  */
+NVIC_Error_t NVIC_SystemReset(void);
 
+/**
+  * @brief  Get the priority grouping of the NVIC.
+  * @note   This function retrieves the priority grouping configured for the NVIC.
+  * @param  PriorityGroup: Pointer to a variable where the priority grouping will be stored.
+  * @retval NVIC_Error_t value:
+  *           - NVIC_OK: Priority grouping retrieved successfully.
+  *           - NVIC_ERROR: Error occurred during priority grouping retrieval.
+  */
 NVIC_Error_t NVIC_GetPriorityGrouping(uint32* PriorityGroup);
 
-NVIC_Error_t NVIC_GetActive (IRQn_t IRQn,uint32* Activity);
+/**
+  * @brief  Get the active status of an interrupt.
+  * @note   This function checks if an interrupt is active.
+  * @param  IRQn: Interrupt number (IRQn_t) to check.
+  * @param  Activity: Pointer to a variable where the activity status will be stored.
+  * @retval NVIC_Error_t value:
+  *           - NVIC_OK: Activity status retrieved successfully.
+  *           - NVIC_ERROR: Error occurred during activity status retrieval.
+  */
+NVIC_Error_t NVIC_GetActive(IRQn_t IRQn, uint32* Activity);

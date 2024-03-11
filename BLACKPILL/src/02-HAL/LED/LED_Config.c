@@ -33,10 +33,17 @@
 */
 const LED_CONFG_t LEDARR[_LED_enum]=
 {
-    [BuiltInLED]=
+
+    [TestLed]=
     {
-        .PORT=LED_PORTC,
-        .PIN=LED_PIN13,
-        .Connection=LED_Connection_ActiveLow
+        .PORT=LED_PORTA,
+        .PIN=LED_PIN7,
+        .Connection=LED_Connection_ActiveHIGH
+    },
+    [TestLed2]=
+    {
+        .PORT=LED_PORTA,
+        .PIN=LED_PIN0,
+        .Connection=LED_Connection_ActiveHIGH
     }
 };

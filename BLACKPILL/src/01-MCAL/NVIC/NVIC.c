@@ -14,9 +14,9 @@
 #define SCB_Base_ADDRESS             0xE000ED00 /* Base address of SCB peripheral */
 #define InterruptsPerRegister        32
 
-#define SCB_ClearGroupingBits        0xFFFF8FFF
+#define SCB_ClearGroupingBits        0x00008FFF
 
-#define NVIC_IPR_Clear               0xFFFFFFF0
+#define NVIC_IPR_Mask                0x00000011
 
 /**********************************  Types  ************************************************/
 typedef struct
@@ -158,13 +158,13 @@ NVIC_Error_t NVIC_GetActive (IRQn_t IRQn,uint32* Activity){
 
 NVIC_Error_t NVIC_SetPriority(IRQn_t IRQn, uint32 priority){
     NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
-    uint8 Local_Index=IRQn>>2;//devide by 4
+    uint8 Local_Index=IRQn>>2;//divide by 4
     if(IRQn>=_INT_Num){
         Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }else{
         uint32 Local_IPR=NVIC->NVIC_IPR[Local_Index]; // reading the register in local variable
-        Local_IPR &=(NVIC_IPR_Clear<<(IRQn%4));       // Clearing the coresponding bits before adding the new changes
-        Local_IPR |=(priority<<(IRQn%4));             // Adding the new changes to the local variable
+        Local_IPR &= ~(NVIC_IPR_Mask<<((IRQn%4)*8));       // Clearing the coresponding bits before adding the new changes
+        Local_IPR |=(priority<<((IRQn%4)*8));             // Adding the new changes to the local variable
         NVIC->NVIC_IPR[Local_Index]=Local_IPR;        // Adding the new changes to the physical register
     }
     return Local_returnValue;
@@ -196,8 +196,9 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority){
     if(IRQn>=_INT_Num){
         Local_returnValue=NVIC_ERROR_INVALID_ARGUMENT;
     }else{
-        *priority=((NVIC->NVIC_IPR[Local_Index])>>(IRQn%4))&(~NVIC_IPR_Clear); // reading the register in local variable
+        *priority=((NVIC->NVIC_IPR[Local_Index])>>((IRQn%4)*8))&(NVIC_IPR_Mask); // reading the register in local variable
     }
+    return Local_returnValue;
 }
 NVIC_Error_t NVIC_SystemReset (void){
 

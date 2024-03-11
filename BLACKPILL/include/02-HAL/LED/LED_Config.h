@@ -22,7 +22,8 @@
 */
 typedef enum 
 {
-    BuiltInLED, /**< Represents the built-in LED */
+	TestLed,
+	TestLed2,
     _LED_enum   /**< Enumeration boundary marker */
 } LEDS_t;
 

@@ -30,8 +30,8 @@ typedef enum
  */
 typedef enum 
 {
-    LED_OFF = 0, /**< LED is turned off */
-    LED_ON  = 1  /**< LED is turned on */
+    LED_OFF = 0x00010000, /**< LED is turned off */
+    LED_ON  = 0x00000001  /**< LED is turned on */
 } LED_Status_t;
 
 /**
@@ -72,7 +72,7 @@ typedef enum
  */
 typedef enum 
 {
-    LED_Connection_ActiveLow  = 0xFFFFFFFE, /**< Active low connection */
+    LED_Connection_ActiveLow  = 0x00010000, /**< Active low connection */
     LED_Connection_ActiveHIGH = 0x00000001  /**< Active high connection */
 } LED_Connection_t;
 

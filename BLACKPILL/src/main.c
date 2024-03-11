@@ -55,7 +55,20 @@
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
+  void DMA1_Stream1_IRQHandler(void)
+  {
 
+	  trace_printf("hello this is higher prioirty interrupt int1\n");
+	  LED_SetStatus(TestLed2,LED_OFF);
+  }
+
+  void DMA1_Stream2_IRQHandler(void)
+  {
+	  NVIC_SetPendingIRQ(DMA1_Stream1_IRQn);
+	  trace_printf("hello this is lower prioirty interrupt int0\n");
+	  LED_SetStatus(TestLed,LED_OFF);
+
+  }
 void main(int argc, char* argv[])
 {
   // At this stage the system clock should have already been configured
@@ -65,28 +78,29 @@ void main(int argc, char* argv[])
   RCC_Enable_CLOCK(CLOCK_HSE);
   RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
 
-
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOC);
+
   LED_INIT();
-  LED_SetStatus(BuiltInLED,LED_ON);
-  LED_SetStatus(BuiltInLED,LED_OFF);
-  LED_SetStatus(BuiltInLED,LED_ON);
-  LED_SetStatus(BuiltInLED,LED_OFF);
-  LED_SetStatus(BuiltInLED,LED_ON);
-  LED_SetStatus(BuiltInLED,LED_OFF);
-  trace_printf("Hello world\n");
-  trace_printf("Hello world\n");
-  trace_printf("Hello world\n");
-  trace_printf("Hello world\n");
-  trace_printf("Hello world\n");
-  trace_printf("Hello world\n");
+  LED_SetStatus(TestLed,LED_ON);
+  LED_SetStatus(TestLed2,LED_ON);
+  NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  NVIC_EnableIRQ(DMA1_Stream2_IRQn );  
+  NVIC_DisableIRQ(DMA1_Stream2_IRQn );  
+  
+  NVIC_SetPriorityGrouping(NVIC_PriorityGroup_4);
+  NVIC_SetPriority(DMA1_Stream2_IRQn,0b10000000);
+  NVIC_SetPriority(DMA1_Stream1_IRQn,0b01000000);
+
+  NVIC_SetPendingIRQ(DMA1_Stream2_IRQn);
+
   // Infinite loop
   while (1)
     {
        // Add your code here.
     }
+
 }
 
 #pragma GCC diagnostic pop

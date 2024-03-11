@@ -452,3 +452,2210 @@ arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
    5007	    160	    412	   5579	   15cb	BLACKPILL.elf
 'Finished building: BLACKPILL.siz'
 ' '
+12:29:00 **** Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../system/src/cmsis/vectors_stm32f401xc.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/src/cmsis/vectors_stm32f401xc.d" -MT"system/src/cmsis/vectors_stm32f401xc.o" -c -o "system/src/cmsis/vectors_stm32f401xc.o" "../system/src/cmsis/vectors_stm32f401xc.c"
+'Finished building: ../system/src/cmsis/vectors_stm32f401xc.c'
+' '
+'Building file: ../src/01-MCAL/SYSTICK/SYSTICK.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/SYSTICK/SYSTICK.d" -MT"src/01-MCAL/SYSTICK/SYSTICK.o" -c -o "src/01-MCAL/SYSTICK/SYSTICK.o" "../src/01-MCAL/SYSTICK/SYSTICK.c"
+../src/01-MCAL/SYSTICK/SYSTICK.c: In function 'SysTick_SetClockSource':
+../src/01-MCAL/SYSTICK/SYSTICK.c:65:57: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+     if(ClockSource>SysTick_CLOCK_SOURCE_AHB||ClockSource<SysTick_CLOCK_SOURCE_AHB_8)
+                                                         ^
+../src/01-MCAL/SYSTICK/SYSTICK.c: In function 'SysTick_SetTimeMS':
+../src/01-MCAL/SYSTICK/SYSTICK.c:87:42: warning: unused parameter 'Time' [-Wunused-parameter]
+ SysTick_Error_t SysTick_SetTimeMS(uint32 Time){
+                                          ^
+../src/01-MCAL/SYSTICK/SYSTICK.c: At top level:
+../src/01-MCAL/SYSTICK/SYSTICK.c:101:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ SysTick_Handler()
+ ^
+../src/01-MCAL/SYSTICK/SYSTICK.c: In function 'SysTick_SetTimeMS':
+../src/01-MCAL/SYSTICK/SYSTICK.c:88:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/SYSTICK/SYSTICK.c: In function 'SysTick_Handler':
+../src/01-MCAL/SYSTICK/SYSTICK.c:104:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/SYSTICK/SYSTICK.c'
+' '
+'Building file: ../src/01-MCAL/NVIC/NVIC.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/NVIC/NVIC.d" -MT"src/01-MCAL/NVIC/NVIC.o" -c -o "src/01-MCAL/NVIC/NVIC.o" "../src/01-MCAL/NVIC/NVIC.c"
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_GetPriority':
+../src/01-MCAL/NVIC/NVIC.c:194:18: warning: variable 'Local_returnValue' set but not used [-Wunused-but-set-variable]
+     NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+                  ^
+../src/01-MCAL/NVIC/NVIC.c:201:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_SystemReset':
+../src/01-MCAL/NVIC/NVIC.c:204:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/NVIC/NVIC.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/SYSTICK/SYSTICK.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5007	    160	    412	   5579	   15cb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:30:43 **** Clean-only build of configuration Debug for project BLACKPILL ****
+make clean 
+rm -rf BLACKPILL.siz ./system/src/newlib/assert.d ./system/src/newlib/exit.d ./system/src/newlib/sbrk.d ./system/src/newlib/startup.d ./system/src/newlib/syscalls.d  ./system/src/diag/trace-impl.d ./system/src/diag/trace.d  ./system/src/cortexm/exception-handlers.d ./system/src/cortexm/initialize-hardware.d ./system/src/cortexm/reset-hardware.d  ./system/src/cmsis/system_stm32f4xx.d ./system/src/cmsis/vectors_stm32f401xc.d  ./src/02-HAL/SWITCH/SWITCH.d ./src/02-HAL/SWITCH/SWITCH_Config.d  ./src/02-HAL/LED/LED.d ./src/02-HAL/LED/LED_Config.d  ./src/01-MCAL/SYSTICK/SYSTICK.d  ./src/01-MCAL/RCC/RCC.d  ./src/01-MCAL/NVIC/NVIC.d  ./src/01-MCAL/GPIO/GPIO.d  ./src/main.d ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/SYSTICK/SYSTICK.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o BLACKPILL.hex ./system/src/newlib/cxx.d  BLACKPILL.elf
+process_begin: CreateProcess(NULL, rm -rf BLACKPILL.siz ./system/src/newlib/assert.d ./system/src/newlib/exit.d ./system/src/newlib/sbrk.d ./system/src/newlib/startup.d ./system/src/newlib/syscalls.d ./system/src/diag/trace-impl.d ./system/src/diag/trace.d ./system/src/cortexm/exception-handlers.d ./system/src/cortexm/initialize-hardware.d ./system/src/cortexm/reset-hardware.d ./system/src/cmsis/system_stm32f4xx.d ./system/src/cmsis/vectors_stm32f401xc.d ./src/02-HAL/SWITCH/SWITCH.d ./src/02-HAL/SWITCH/SWITCH_Config.d ./src/02-HAL/LED/LED.d ./src/02-HAL/LED/LED_Config.d ./src/01-MCAL/SYSTICK/SYSTICK.d ./src/01-MCAL/RCC/RCC.d ./src/01-MCAL/NVIC/NVIC.d ./src/01-MCAL/GPIO/GPIO.d ./src/main.d ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o ./system/src/diag/trace-impl.o ./system/src/diag/trace.o ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o ./src/01-MCAL/SYSTICK/SYSTICK.o ./src/01-MCAL/RCC/RCC.o ./src/01-MCAL/NVIC/NVIC.o ./src/01-MCAL/GPIO/GPIO.o ./src/main.o BLACKPILL.hex ./system/src/newlib/cxx.d BLACKPILL.elf, ...) failed.
+make (e=2): The system cannot find the file specified.
+
+make: [makefile:110: clean] Error 2 (ignored)
+' '
+12:30:44 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5007	    160	    412	   5579	   15cb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:30:53 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5007	    160	    412	   5579	   15cb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:37:25 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+../src/02-HAL/LED/LED_Config.c:46:21: error: 'LED_Connection_ActiveHigh' undeclared here (not in a function)
+         .Connection=LED_Connection_ActiveHigh
+                     ^
+make: *** [src/02-HAL/LED/subdir.mk:23: src/02-HAL/LED/LED_Config.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:37:55 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:38:10 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:38:51 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:38:56 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:40:20 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+../src/02-HAL/LED/LED_Config.c:46:21: error: 'LED_Connection_ActiveLOW' undeclared here (not in a function)
+         .Connection=LED_Connection_ActiveLOW
+                     ^
+make: *** [src/02-HAL/LED/subdir.mk:23: src/02-HAL/LED/LED_Config.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:40:34 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+../src/02-HAL/LED/LED_Config.c:46:21: error: 'LED_Connection_ActiveLoW' undeclared here (not in a function)
+         .Connection=LED_Connection_ActiveLoW
+                     ^
+make: *** [src/02-HAL/LED/subdir.mk:23: src/02-HAL/LED/LED_Config.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:40:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:40:54 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:47:28 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+12:48:00 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5015	    160	    412	   5587	   15d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:37:43 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5183	    160	    412	   5755	   167b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:37:50 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5183	    160	    412	   5755	   167b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:39:36 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5183	    160	    412	   5755	   167b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:40:32 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5183	    160	    412	   5755	   167b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:41:18 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5183	    160	    412	   5755	   167b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:50:10 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5223	    160	    412	   5795	   16a3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:50:42 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5223	    160	    412	   5795	   16a3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:51:54 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4919	    160	    412	   5491	   1573	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+13:51:59 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4919	    160	    412	   5491	   1573	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:56:03 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:56:09 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:57:18 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:58:01 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:58:06 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:59:35 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5347	    160	    412	   5919	   171f	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+15:59:40 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5347	    160	    412	   5919	   171f	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:00:45 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5347	    160	    412	   5919	   171f	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:00:54 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5347	    160	    412	   5919	   171f	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:05:00 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:05:07 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:09:12 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:09:19 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:16:31 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:89:3: error: too few arguments to function 'NVIC_SetPendingIRQ'
+   NVIC_SetPendingIRQ();
+   ^
+In file included from ../src/main.c:37:0:
+../src/../include/01-MCAL/NVIC/NVIC.h:126:14: note: declared here
+ NVIC_Error_t NVIC_SetPendingIRQ(IRQn_t IRQn);
+              ^
+make: *** [src/subdir.mk:20: src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:17:01 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:17:19 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:19:24 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:19:41 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:20:05 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5335	    160	    412	   5907	   1713	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:20:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5191	    160	    412	   5763	   1683	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:20:58 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5191	    160	    412	   5763	   1683	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:21:43 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5127	    160	    412	   5699	   1643	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:21:48 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5127	    160	    412	   5699	   1643	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:25:19 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:25:26 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:27:36 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:28:13 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:28:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:30:00 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:30:04 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:31:20 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:31:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:32:35 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:32:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:34:16 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:34:21 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:35:01 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:35:18 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:35:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5271	    160	    412	   5843	   16d3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:36:30 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5287	    160	    412	   5859	   16e3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:36:38 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5287	    160	    412	   5859	   16e3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:45:25 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5287	    160	    412	   5859	   16e3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:45:33 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5287	    160	    412	   5859	   16e3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:56:28 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5287	    160	    412	   5859	   16e3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:59:20 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5295	    160	    412	   5867	   16eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+16:59:24 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5295	    160	    412	   5867	   16eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:02:04 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:02:13 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:10:33 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:36:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/GPIO/GPIO.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/GPIO/GPIO.d" -MT"src/01-MCAL/GPIO/GPIO.o" -c -o "src/01-MCAL/GPIO/GPIO.o" "../src/01-MCAL/GPIO/GPIO.c"
+'Finished building: ../src/01-MCAL/GPIO/GPIO.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:36:35 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:39:00 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/01-MCAL/GPIO/GPIO.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/GPIO/GPIO.d" -MT"src/01-MCAL/GPIO/GPIO.o" -c -o "src/01-MCAL/GPIO/GPIO.o" "../src/01-MCAL/GPIO/GPIO.c"
+'Finished building: ../src/01-MCAL/GPIO/GPIO.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:39:12 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:40:30 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/GPIO/GPIO.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/GPIO/GPIO.d" -MT"src/01-MCAL/GPIO/GPIO.o" -c -o "src/01-MCAL/GPIO/GPIO.o" "../src/01-MCAL/GPIO/GPIO.c"
+'Finished building: ../src/01-MCAL/GPIO/GPIO.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:40:37 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5023	    160	    412	   5595	   15db	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:42:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:42:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:46:11 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:46:16 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:46:35 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:46:43 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:49:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:49:55 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:52:05 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:52:09 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5039	    160	    412	   5611	   15eb	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:56:58 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:57:05 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:57:49 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED.d" -MT"src/02-HAL/LED/LED.o" -c -o "src/02-HAL/LED/LED.o" "../src/02-HAL/LED/LED.c"
+'Finished building: ../src/02-HAL/LED/LED.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+17:57:52 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:16:36 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+../src/02-HAL/LED/LED_Config.c:41:21: error: 'LED_Connection_ActiveLoW' undeclared here (not in a function)
+         .Connection=LED_Connection_ActiveLoW
+                     ^
+make: *** [src/02-HAL/LED/subdir.mk:23: src/02-HAL/LED/LED_Config.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+18:16:45 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:16:49 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:17:33 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:18:24 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/02-HAL/LED/LED_Config.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/02-HAL/LED/LED_Config.d" -MT"src/02-HAL/LED/LED_Config.o" -c -o "src/02-HAL/LED/LED_Config.o" "../src/02-HAL/LED/LED_Config.c"
+'Finished building: ../src/02-HAL/LED/LED_Config.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5071	    160	    412	   5643	   160b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:19:28 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5439	    160	    412	   6011	   177b	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:20:26 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5447	    160	    412	   6019	   1783	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:21:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5447	    160	    412	   6019	   1783	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:21:41 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:21:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:24:07 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:24:13 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:25:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:25:46 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:25:50 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:25:54 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:26:41 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:26:46 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:32:32 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:32:41 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:33:33 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:34:09 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:36:34 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/NVIC/NVIC.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/NVIC/NVIC.d" -MT"src/01-MCAL/NVIC/NVIC.o" -c -o "src/01-MCAL/NVIC/NVIC.o" "../src/01-MCAL/NVIC/NVIC.c"
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_GetPriority':
+../src/01-MCAL/NVIC/NVIC.c:194:18: warning: variable 'Local_returnValue' set but not used [-Wunused-but-set-variable]
+     NVIC_Error_t Local_returnValue=NVIC_ERROR_OK;
+                  ^
+../src/01-MCAL/NVIC/NVIC.c:201:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_SystemReset':
+../src/01-MCAL/NVIC/NVIC.c:204:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/NVIC/NVIC.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:37:25 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/NVIC/NVIC.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/NVIC/NVIC.d" -MT"src/01-MCAL/NVIC/NVIC.o" -c -o "src/01-MCAL/NVIC/NVIC.o" "../src/01-MCAL/NVIC/NVIC.c"
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_SystemReset':
+../src/01-MCAL/NVIC/NVIC.c:205:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/NVIC/NVIC.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:37:50 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:37:57 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:39:18 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:57:20 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+18:58:45 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:09:27 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/NVIC/NVIC.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/NVIC/NVIC.d" -MT"src/01-MCAL/NVIC/NVIC.o" -c -o "src/01-MCAL/NVIC/NVIC.o" "../src/01-MCAL/NVIC/NVIC.c"
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_SystemReset':
+../src/01-MCAL/NVIC/NVIC.c:205:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/NVIC/NVIC.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:14:23 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:14:26 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:14:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:15:09 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:15:13 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:15:29 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:16:27 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:16:55 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5431	    160	    412	   6003	   1773	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:17:56 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:18:11 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:18:42 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:18:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:19:41 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:19:46 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:21:24 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:24:30 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:24:43 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:25:11 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:25:15 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:30:25 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:44:42 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/01-MCAL/NVIC/NVIC.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/NVIC/NVIC.d" -MT"src/01-MCAL/NVIC/NVIC.o" -c -o "src/01-MCAL/NVIC/NVIC.o" "../src/01-MCAL/NVIC/NVIC.c"
+../src/01-MCAL/NVIC/NVIC.c: In function 'NVIC_SystemReset':
+../src/01-MCAL/NVIC/NVIC.c:205:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+'Finished building: ../src/01-MCAL/NVIC/NVIC.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:44:51 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:44:56 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:47:17 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:47:21 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5399	    160	    412	   5971	   1753	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:50:47 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: GNU Arm Cross C Compiler'
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: BLACKPILL.elf'
+'Invoking: GNU Arm Cross C++ Linker'
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
+'Finished building target: BLACKPILL.elf'
+' '
+'Invoking: GNU Arm Cross Create Flash Image'
+arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
+'Finished building: BLACKPILL.hex'
+' '
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5479	    160	    412	   6051	   17a3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
+19:50:53 **** Incremental Build of configuration Debug for project BLACKPILL ****
+make all 
+'Invoking: GNU Arm Cross Print Size'
+arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
+   text	   data	    bss	    dec	    hex	filename
+   5479	    160	    412	   6051	   17a3	BLACKPILL.elf
+'Finished building: BLACKPILL.siz'
+' '
