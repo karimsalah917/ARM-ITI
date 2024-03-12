@@ -35,7 +35,6 @@ Allocating common symbols
 Common symbol       size              file
 
 errno               0x4               ./system/src/newlib/syscalls.o
-karim               0x4               ./src/4-Service/SCHED.o
 
 Discarded input sections
 
@@ -1191,19 +1190,27 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/4-Service/SCHED.o
  .data          0x00000000        0x0 ./src/4-Service/SCHED.o
  .bss           0x00000000        0x0 ./src/4-Service/SCHED.o
- .debug_info    0x00000000       0x87 ./src/4-Service/SCHED.o
- .debug_abbrev  0x00000000       0x3a ./src/4-Service/SCHED.o
+ .text.SCHED_Init
+                0x00000000        0x4 ./src/4-Service/SCHED.o
+ .text.SCHED_RegisterTask
+                0x00000000        0x4 ./src/4-Service/SCHED.o
+ .text.SCHED_Start
+                0x00000000        0x4 ./src/4-Service/SCHED.o
+ .debug_info    0x00000000      0x1b5 ./src/4-Service/SCHED.o
+ .debug_abbrev  0x00000000       0xd7 ./src/4-Service/SCHED.o
+ .debug_loc     0x00000000       0x21 ./src/4-Service/SCHED.o
  .debug_aranges
-                0x00000000       0x18 ./src/4-Service/SCHED.o
+                0x00000000       0x30 ./src/4-Service/SCHED.o
+ .debug_ranges  0x00000000       0x20 ./src/4-Service/SCHED.o
  .debug_macro   0x00000000       0x22 ./src/4-Service/SCHED.o
  .debug_macro   0x00000000      0x898 ./src/4-Service/SCHED.o
  .debug_macro   0x00000000       0x10 ./src/4-Service/SCHED.o
- .debug_line    0x00000000       0xbb ./src/4-Service/SCHED.o
- .debug_str     0x00000000     0x2608 ./src/4-Service/SCHED.o
+ .debug_line    0x00000000       0xeb ./src/4-Service/SCHED.o
+ .debug_str     0x00000000     0x2707 ./src/4-Service/SCHED.o
  .comment       0x00000000       0x6f ./src/4-Service/SCHED.o
+ .debug_frame   0x00000000       0x40 ./src/4-Service/SCHED.o
  .ARM.attributes
                 0x00000000       0x33 ./src/4-Service/SCHED.o
- COMMON         0x00000000        0x4 ./src/4-Service/SCHED.o
  .group         0x00000000        0x8 ./src/4-Service/SCHED_Config.o
  .text          0x00000000        0x0 ./src/4-Service/SCHED_Config.o
  .data          0x00000000        0x0 ./src/4-Service/SCHED_Config.o
@@ -1750,33 +1757,34 @@ END GROUP
  .text.LED_Handler
                 0x08000948       0x30 ./src/main.o
                 0x08000948                LED_Handler
- .text.main     0x08000978       0x44 ./src/main.o
+ .text.main     0x08000978       0x40 ./src/main.o
                 0x08000978                main
- .text.__errno  0x080009bc        0xc e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-errno.o)
-                0x080009bc                __errno
+ .text.__errno  0x080009b8        0xc e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-errno.o)
+                0x080009b8                __errno
  .text._vsnprintf_r
-                0x080009c8       0x56 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x080009c8                _vsniprintf_r
-                0x080009c8                _vsnprintf_r
- *fill*         0x08000a1e        0x2 
+                0x080009c4       0x56 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x080009c4                _vsniprintf_r
+                0x080009c4                _vsnprintf_r
+ *fill*         0x08000a1a        0x2 
  .text.vsnprintf
-                0x08000a20       0x1c e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08000a20                vsniprintf
-                0x08000a20                vsnprintf
+                0x08000a1c       0x1c e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08000a1c                vsniprintf
+                0x08000a1c                vsnprintf
  .text.__ssputs_r
-                0x08000a3c       0xb2 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000a3c                __ssputs_r
- *fill*         0x08000aee        0x2 
+                0x08000a38       0xb2 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000a38                __ssputs_r
+ *fill*         0x08000aea        0x2 
  .text._svfprintf_r
-                0x08000af0      0x1e8 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08000af0                _svfiprintf_r
-                0x08000af0                _svfprintf_r
+                0x08000aec      0x1e8 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08000aec                _svfiprintf_r
+                0x08000aec                _svfprintf_r
  .text._printf_common
-                0x08000cd8       0xec e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08000cd8                _printf_common
+                0x08000cd4       0xec e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08000cd4                _printf_common
  .text._printf_i
-                0x08000dc4      0x24c e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08000dc4                _printf_i
+                0x08000dc0      0x24c e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08000dc0                _printf_i
+ *fill*         0x0800100c        0x4 
  .text          0x08001010       0xa0 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-memchr.o)
                 0x08001010                memchr
  .text.memcpy   0x080010b0       0x16 e:/embedded/tourkey/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-memcpy-stub.o)
@@ -2108,7 +2116,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x37d4
+.debug_info     0x00000000     0x37d3
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xef ./system/src/newlib/exit.o
  .debug_info    0x000000ef      0x11f ./system/src/newlib/sbrk.o
@@ -2125,7 +2133,7 @@ END GROUP
  .debug_info    0x0000263e      0x2d8 ./src/01-MCAL/SYSTICK/SYSTICK.o
  .debug_info    0x00002916      0x77f ./src/01-MCAL/RCC/RCC.o
  .debug_info    0x00003095      0x40d ./src/01-MCAL/GPIO/GPIO.o
- .debug_info    0x000034a2      0x332 ./src/main.o
+ .debug_info    0x000034a2      0x331 ./src/main.o
 
 .debug_abbrev   0x00000000     0x11d9
  *(.debug_abbrev)

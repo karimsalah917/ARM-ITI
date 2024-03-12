@@ -8,7 +8,7 @@
 /* File Details : Header file for Scheduler module                                         */
 /* Target       : STM32f401cc may be comptaeble with any m3/m4 target                      */
 /*******************************************************************************************/
-#pragma once
+#pragma once 
 /**********************************  Includes **********************************************/
 #include "../00-LIB/STD.h"
 #include "SCHED_Config.h"
@@ -38,18 +38,23 @@ typedef struct
     uint32       PeriodicityMS; /**< Periodicity of the task in milliseconds. */
     uint32       Priority;      /**< Priority of the task. */
     uint32       InitialDelayMS;/**< Initial delay of the task in milliseconds. */
-    RunnableCB_t Runnable;      /**< Callback function pointer for the task. */ 
+    RunnableCB_t CallBack;      /**< Callback function pointer for the task. */ 
 } RunnableTask_t;
 
 /*********************************** API's *************************************************/
+
 /**
  * @brief Initializes the scheduler.
+ * 
+ * This function initializes the scheduler with the specified tick time.
+ * 
+ * @param TickTimeMS The tick time in milliseconds.
  * 
  * @return Status of the scheduler initialization.
  *         - SCHEDULER_OPERATION_SUCCESS: Initialization successful.
  *         - SCHEDULER_OPERATION_FAILED: Initialization failed.
  */
-SCHED_Status_t SCHED_Init(void);
+SCHED_Status_t SCHED_Init();
 
 /**
  * @brief Registers a runnable task with the scheduler.

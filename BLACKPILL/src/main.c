@@ -88,7 +88,7 @@ void main(int argc, char* argv[])
 
    SysTick_SetClockSource(SysTick_CLOCK_SOURCE_AHB_8);
    SysTick_SetCurrentVal(0);
-   SysTick_SetTickMS(1000);
+   SysTick_SetTickMS(100);
    SysTick_EnableInterrupt();
    SysTick_EnableCounterPeriodic();
    SysTick_SetCallBack(LED_Handler);
