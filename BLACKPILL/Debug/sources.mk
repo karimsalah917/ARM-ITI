@@ -39,6 +39,7 @@ src/01-MCAL/RCC \
 src/01-MCAL/SYSTICK \
 src/02-HAL/LED \
 src/02-HAL/SWITCH \
+src/4-Service \
 src \
 system/src/cmsis \
 system/src/cortexm \
