@@ -7,7 +7,10 @@ src/main.o: ../src/main.c ../system/include/diag/trace.h \
  ../src/../include/02-HAL/LED/LED_Config.h \
  ../src/../include/01-MCAL/NVIC/NVIC.h \
  ../src/../include/01-MCAL/NVIC/../../00-LIB/STD.h \
- ../src/../include/01-MCAL/NVIC/stm32f401cc.h
+ ../src/../include/01-MCAL/NVIC/stm32f401cc.h \
+ ../src/../include/01-MCAL/SYSTICK/SYSTICK.h \
+ ../src/../include/01-MCAL/SYSTICK/../../00-LIB/STD.h \
+ ../src/../include/01-MCAL/SYSTICK/SYSTICK\ _Config.h
 
 ../system/include/diag/trace.h:
 
@@ -30,3 +33,9 @@ src/main.o: ../src/main.c ../system/include/diag/trace.h \
 ../src/../include/01-MCAL/NVIC/../../00-LIB/STD.h:
 
 ../src/../include/01-MCAL/NVIC/stm32f401cc.h:
+
+../src/../include/01-MCAL/SYSTICK/SYSTICK.h:
+
+../src/../include/01-MCAL/SYSTICK/../../00-LIB/STD.h:
+
+../src/../include/01-MCAL/SYSTICK/SYSTICK\ _Config.h:

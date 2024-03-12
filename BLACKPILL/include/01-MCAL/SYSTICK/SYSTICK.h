@@ -9,6 +9,7 @@
 /*******************************************************************************************/
 /********************************** Includes ***********************************************/
 #include "../../00-LIB/STD.h"
+#include "SYSTICK _Config.h"
 /********************************** Definitions ********************************************/
 
 /**********************************   Types ************************************************/
@@ -95,7 +96,7 @@ SysTick_Error_t SysTick_SetClockSource(SysTick_ClockSource_t ClockSource);
  * @param Time The time interval in milliseconds.
  * @return SysTick_Error_t Error code indicating success or failure of the operation.
  */
-SysTick_Error_t SysTick_SetTimeMS(uint32 Time);
+SysTick_Error_t SysTick_SetTickMS(uint32 Time);
 
 /**
  * @brief Set the callback function to be called when SysTick interrupt occurs.

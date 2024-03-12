@@ -204,7 +204,7 @@ NVIC_Error_t NVIC_GetPriority(IRQn_t IRQn, uint32 *priority){
     return Local_returnValue;
 }
 NVIC_Error_t NVIC_SystemReset (void){
-
+return NVIC_ERROR_OK;
 }
 
 

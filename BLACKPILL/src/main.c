@@ -35,6 +35,7 @@
 #include "../include/01-MCAL/GPIO/GPIO.h"
 #include "../include/02-HAL/LED/LED.h"
 #include "../include/01-MCAL/NVIC/NVIC.h"
+#include "../include/01-MCAL/SYSTICK/SYSTICK.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -55,51 +56,46 @@
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
-  void DMA1_Stream1_IRQHandler(void)
+#define TestSysTick
 
+#ifdef TestSysTick
+  void LED_Handler (void)
   {
-    NVIC_TriggerSoftwareInterrupt(DMA1_Stream2_IRQn);
-    //NVIC_TriggerSoftwareInterrupt(DMA1_Stream2_IRQn);
-	  trace_printf("hello this is higher prioirty interrupt int1\n");
-	  LED_SetStatus(TestLed2,LED_OFF);
+    static uint8 toggle=0;
+    if(toggle==0)
+    {
+      LED_SetStatus(TestLed,LED_ON);
+    }else
+    {
+      LED_SetStatus(TestLed,LED_OFF);
+    }
+    toggle =!toggle;
   }
-
-  void DMA1_Stream2_IRQHandler(void)
-  {
-	  trace_printf("hello this is lower prioirty interrupt int0\n");
-	  LED_SetStatus(TestLed,LED_OFF);
-
-  }
+#endif
+//
 void main(int argc, char* argv[])
 {
   // At this stage the system clock should have already been configured
   // at high speed.
   
+#ifdef TestSysTick
+   RCC_Enable_CLOCK(CLOCK_HSE);
+   RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
 
-  RCC_Enable_CLOCK(CLOCK_HSE);
-  RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
+   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
 
-  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
-  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
-  RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOC);
+   LED_INIT();
 
-  LED_INIT();
-  LED_SetStatus(TestLed,LED_ON);
-  LED_SetStatus(TestLed2,LED_ON);
-  NVIC_EnableIRQ(DMA1_Stream1_IRQn);
-  NVIC_EnableIRQ(DMA1_Stream2_IRQn );  
+   SysTick_SetClockSource(SysTick_CLOCK_SOURCE_AHB_8);
+   SysTick_SetCurrentVal(0);
+   SysTick_SetTickMS(1000);
+   SysTick_EnableInterrupt();
+   SysTick_EnableCounterPeriodic();
+   SysTick_SetCallBack(LED_Handler);
+#endif
 
-  
-  NVIC_SetPriorityGrouping(NVIC_PriorityGroup_4);
-  NVIC_SetPriority(DMA1_Stream2_IRQn,0b10000000);
-  NVIC_SetPriority(DMA1_Stream1_IRQn,0b01000000);
-
-  NVIC_SetPendingIRQ(DMA1_Stream1_IRQn);
-
-  // Infinite loop
   while (1)
     {
-       // Add your code here.
     }
 
 }
