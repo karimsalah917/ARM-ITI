@@ -11,8 +11,9 @@
 /**********************************  Includes **********************************************/
 #include "../../include/4-Service/SCHED.h"
 #include "../../include/01-MCAL/SYSTICK/SYSTICK.h"
+#include "../../include/4-Service/SCHED_Config.h"
 /********************************** Definitions ********************************************/
-
+#define TICK_TIME_MS 1
 /**********************************  Types  ************************************************/
 typedef struct 
 {
@@ -98,7 +99,7 @@ SCHED_Status_t SCHED_Start(void)
     {
         if (PendingTicks)
         {
-            --PendingTicks;
+            PendingTicks--;
             SCHED();
         }
         

@@ -30,12 +30,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "diag/trace.h"
-#include "../include/01-MCAL/RCC/RCC.h"
 #include "../include/00-LIB/STD.h"
-#include "../include/01-MCAL/GPIO/GPIO.h"
-#include "../include/02-HAL/LED/LED.h"
-#include "../include/01-MCAL/NVIC/NVIC.h"
-#include "../include/01-MCAL/SYSTICK/SYSTICK.h"
+
+#include "../include/4-Service/SCHED.h"
+#include "../include/4-Service/CLOCK_CONFIG.h"
+
+#include "../include/03-APP/TestScheduler.h"
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).
@@ -56,48 +56,14 @@
 #pragma GCC diagnostic ignored "-Wmissing-declarations"
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
-#define TestSysTick
-
-#ifdef TestSysTick
-  void LED_Handler (void)
-  {
-    static uint8 toggle=0;
-    if(toggle==0)
-    {
-      LED_SetStatus(TestLed,LED_ON);
-    }else
-    {
-      LED_SetStatus(TestLed,LED_OFF);
-    }
-    toggle =!toggle;
-  }
-#endif
-//
 void main(int argc, char* argv[])
 {
-  // At this stage the system clock should have already been configured
-  // at high speed.
-  
-#ifdef TestSysTick
-   RCC_Enable_CLOCK(CLOCK_HSE);
-   RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
+    CLOCK_CONFIG();
 
-   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
+    TestSched_Init();
 
-   LED_INIT();
-
-   SysTick_SetClockSource(SysTick_CLOCK_SOURCE_AHB_8);
-   SysTick_SetCurrentVal(0);
-   SysTick_SetTickMS(100);
-   SysTick_EnableInterrupt();
-   SysTick_EnableCounterPeriodic();
-   SysTick_SetCallBack(LED_Handler);
-#endif
-
-  while (1)
-    {
-    }
-
+    SCHED_Init();
+    SCHED_Start();
 }
 
 #pragma GCC diagnostic pop

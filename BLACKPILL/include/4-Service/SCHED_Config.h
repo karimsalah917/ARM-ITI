@@ -9,7 +9,7 @@
 /* Target       : STM32f401cc may be comptaeble with any m3/m4 target                      */
 /*******************************************************************************************/
 #pragma once
-/**********************************  Includes **********************************************/
+/**********************************  Definition **********************************************/
 /**********************************   Types ************************************************/
 /**
  * @brief Enumeration for defining the order and priority of RunnableTasks.
@@ -20,6 +20,9 @@
  */
 typedef enum
 {
-    Runnable1=0,
-    _Runnable_no
+    Run1=0,
+    Run2,
+    _Runnable_no=5
 } RunnablePriority_t;
+
+
