@@ -36,6 +36,7 @@
 #include "../include/4-Service/CLOCK_CONFIG.h"
 
 #include "../include/03-APP/TestScheduler.h"
+
 // ----------------------------------------------------------------------------
 //
 // Standalone STM32F4 empty sample (trace via DEBUG).

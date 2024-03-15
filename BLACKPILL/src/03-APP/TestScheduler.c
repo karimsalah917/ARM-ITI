@@ -1,3 +1,5 @@
+
+#ifdef APP1
 #include "../../include/02-HAL/LED/LED.h"
 #include "../../include/4-Service/SCHED.h"
 #include "../../include/03-APP/TestScheduler.h"
@@ -33,3 +35,4 @@ LED_INIT();
 SCHED_RegisterTask(&R1);
 SCHED_RegisterTask(&R2);
 }
+#endif
