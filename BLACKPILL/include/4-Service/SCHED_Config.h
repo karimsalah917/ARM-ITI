@@ -24,9 +24,10 @@
 typedef enum
 {
     Run1=0,
+    Run2,
     _Runnable_no
 } RunnablePriority_t;
 
 /*********************************** Runnable prototypers ******************************************/
 extern void TrafficLight_Runnable(void);
-
+extern void LCD_Runnable(void);

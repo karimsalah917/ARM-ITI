@@ -34,7 +34,13 @@ const RunnableTask_t RUN_LIST[_Runnable_no] = {
     [Run1] = {
         .TaskName = "LED State Machine",
         .PeriodicityMS = 100,
-        .InitialDelayMS = 0,
+        .InitialDelayMS =100,
         .CallBack = TrafficLight_Runnable
+    },
+    [Run2] = {
+        .TaskName = "LCD task",
+        .PeriodicityMS = 1,
+        .InitialDelayMS = 0,
+        .CallBack = LCD_Runnable
     }
 };

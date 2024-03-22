@@ -41,22 +41,16 @@
 #define YELLOW 1
 #define GREEN 2
 #define UNIT_TIME_PERIOD 100
-#define RED_TIME_PERIOD 2000
-#define YELLOW_TIME_PERIOD 700
-#define GREEN_TIME_PERIOD 900
+#define RED_TIME_PERIOD 3000
+#define YELLOW_TIME_PERIOD 4000
+#define GREEN_TIME_PERIOD 2000
 
 void TrafficLight_Init()
 {
     LED_INIT();
 }
 
-/**
- * Simple state machine Application 
- *  
- *  RED --->YELLOW--->GREEN
- *   ^------<-^-<-------
- * 
-*/
+
 void TrafficLight_Runnable(void)
 {
     static uint8  Current_State=RED;
