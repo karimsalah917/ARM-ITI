@@ -22,8 +22,9 @@
 */
 typedef enum 
 {
-	TestLed,
-	TestLed2,
+	TL_RED,
+	TL_YELLOW,
+	TL_GREEN,
     _LED_enum   /**< Enumeration boundary marker */
 } LEDS_t;
 

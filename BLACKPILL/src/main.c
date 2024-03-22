@@ -35,7 +35,7 @@
 #include "../include/4-Service/SCHED.h"
 #include "../include/4-Service/CLOCK_CONFIG.h"
 
-#include "../include/03-APP/TestScheduler.h"
+#include "../include/03-APP/StateMachine.h"
 
 // ----------------------------------------------------------------------------
 //
@@ -61,7 +61,7 @@ void main(int argc, char* argv[])
 {
     CLOCK_CONFIG();
 
-    TestSched_Init();
+    TrafficLight_Init();
 
     SCHED_Init();
     SCHED_Start();

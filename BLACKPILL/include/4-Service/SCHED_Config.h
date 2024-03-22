@@ -3,14 +3,17 @@
 /* Authority    : Information Technology Institute                                         */
 /* Layer        : Service Abstraction Layer (SAL)                                          */
 /* Module       : OS Scheduler                                                             */
-/* Version      : v1.0                                                                     */
+/* Version      : v1.1                                                                     */
 /* Date         : 11/03/2024                                                               */
 /* File Details : Configuration file for Scheduler module                                  */
 /* Target       : STM32f401cc may be comptaeble with any m3/m4 target                      */
 /*******************************************************************************************/
 #pragma once
 /**********************************  Definition **********************************************/
-/**********************************   Types ************************************************/
+#define TICK_TIME_MS 1
+
+/**********************************   Runnable names ************************************************/
+
 /**
  * @brief Enumeration for defining the order and priority of RunnableTasks.
  * 
@@ -21,8 +24,9 @@
 typedef enum
 {
     Run1=0,
-    Run2,
-    _Runnable_no=5
+    _Runnable_no
 } RunnablePriority_t;
 
+/*********************************** Runnable prototypers ******************************************/
+extern void TrafficLight_Runnable(void);
 

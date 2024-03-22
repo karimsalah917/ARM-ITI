@@ -3,7 +3,7 @@
 /* Authority    : Information Technology Institute                                         */
 /* Layer        : Service Abstraction Layer (SAL)                                          */
 /* Module       : OS Scheduler                                                             */
-/* Version      : v1.0                                                                     */
+/* Version      : v1.1                                                                     */
 /* Date         : 11/03/2024                                                               */
 /* File Details : Header file for Scheduler module                                         */
 /* Target       : STM32f401cc may be comptaeble with any m3/m4 target                      */
@@ -36,7 +36,6 @@ typedef struct
 {
     char*        TaskName;      /**< Name of the runnable task. */
     uint32       PeriodicityMS; /**< Periodicity of the task in milliseconds. */
-    uint32       Priority;      /**< Priority of the task. */
     uint32       InitialDelayMS;/**< Initial delay of the task in milliseconds. */
     RunnableCB_t CallBack;      /**< Callback function pointer for the task. */ 
 } RunnableTask_t;

@@ -34,16 +34,22 @@
 const LED_CONFG_t LEDARR[_LED_enum]=
 {
 
-    [TestLed]=
-    {
-        .PORT=LED_PORTA,
-        .PIN=LED_PIN7,
-        .Connection=LED_Connection_ActiveHIGH
-    },
-    [TestLed2]=
+    [TL_RED]=
     {
         .PORT=LED_PORTA,
         .PIN=LED_PIN0,
+        .Connection=LED_Connection_ActiveHIGH
+    },
+    [TL_YELLOW]=
+    {
+        .PORT=LED_PORTA,
+        .PIN=LED_PIN1,
+        .Connection=LED_Connection_ActiveHIGH
+    },
+    [TL_GREEN]=
+    {
+        .PORT=LED_PORTA,
+        .PIN=LED_PIN2,
         .Connection=LED_Connection_ActiveHIGH
     }
 };
