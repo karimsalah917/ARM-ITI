@@ -60,9 +60,7 @@
 void main(int argc, char* argv[])
 {
     CLOCK_CONFIG();
-
     TrafficLight_Init();
-
     SCHED_Init();
     SCHED_Start();
 }
