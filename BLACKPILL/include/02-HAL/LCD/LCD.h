@@ -14,7 +14,6 @@
 /********************************** Definitions ********************************************/
 #define LCD_SHIFTING_LEFT           0x18
 #define LCD_SHIFTING_RIGHT          0x1C
-#define LCD_CLEAR_DISPLAY           0x01
 /**********************************   Types ************************************************/
 
 /**
@@ -161,17 +160,12 @@ typedef enum
 typedef enum
 {
     LCD_Status_READY=0,
-    LCD_Status_BUSY=1
+    LCD_Status_BUSY
+
 }
 LCD_Status_t;
 /*********************************** API's *************************************************/
  
-/**
- * @brief Initializes the pins required for LCD communication.
- * This function should be called before any other LCD operation.
- */
-void LCD_PinInit(void);
-
 /**
  * @brief Initializes the LCD display.
  * This function should be called after pin initialization.

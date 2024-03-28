@@ -39,7 +39,7 @@ const RunnableTask_t RUN_LIST[_Runnable_no] = {
     },
     [Run2] = {
         .TaskName = "LCD task",
-        .PeriodicityMS = 1,
+        .PeriodicityMS = 2,
         .InitialDelayMS = 0,
         .CallBack = LCD_Runnable
     }
