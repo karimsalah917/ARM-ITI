@@ -35,7 +35,7 @@
 #define LCD_RW_PIN                      9
 #define LCD_RS_PIN                     10
 /**********************************[2]INIT PROCESS *****************************************/
-#define INIT_START_TIME                 40
+#define INIT_POWER_ON_TIME                 40
 #define INIT_FUNCTION_SET_TIME          3
 #define INIT_DISPLAY_ON_OFF_TIME        3
 #define INIT_DISPLAY_CLEAR_TIME         8
@@ -51,27 +51,14 @@
 /*-----------------------------------------------------------------------------------------*/
 
 /**********************************[1]GENERAL USED TYPES ***********************************/
-typedef enum 
-{
-    PROCESS_READY,      // The process is ready to execute
-    PROCESS_RUNNING,    // The process is currently running
-    PROCESS_BLOCKED,    // The process is blocked, waiting for an event or resource
-    PROCESS_DONE,       // The process has completed its execution
-    PROCESS_TERMINATED  // The process has terminated
-} PROCESS_STATE_t;
 
-
-typedef enum
-{
-    TRIGGER_ENABLE_ON=0,
-    TRIGGER_ENABLE_OFF,
-    TRIGGER_ENABLE_DONE
-}TRIGGER_ENABLE_STATES_t;
-typedef struct 
-{
-    TRIGGER_ENABLE_STATES_t STATE;
-    uint32 COUNTER;
-}TRIGGER_ENABLE_t;
+/**
+ * @brief Defines a callback function pointer type.
+ * 
+ * This typedef defines a callback function pointer type named CB_t. Callback functions of this type
+ * take no parameters and return void.
+ */
+typedef void (*CB_t)(void);
 
 
 /***********************************[2]LCD GENERAL STATES ************************************/
@@ -91,23 +78,52 @@ typedef struct
 
 typedef enum 
 {
-    WRITE,
-    CLEAR,
-    SETPOS
+    OPERATION_IDLE,
+    OPERATION_BUSY
 }OPERATION_STATES_t;
+typedef enum 
+{
+    OPERATION_WRTIE_STRING,
+    OPERATION_CLEAR_SCREEN,
+    OPERATION_SET_POSITION,
+    OPERATION_WRITE_NUM
+}OPERATION_TYPES_t;
+
+typedef enum 
+{
+    SEND_CH_LOW=0,
+    SEND_CH_HIGH
+}OPERATION_WRITE_STRING_STATES_t;
 typedef struct
 {
     OPERATION_STATES_t STATE;
     uint32 COUNTER;
+    uint8 TYPE;
 }OPERATION_t;
+
+typedef struct
+{
+    uint8 STATE;
+} OPERATION_THREAD_t;
+
+
+typedef struct
+{
+    const     char*s;
+    uint8      len;
+    uint8 Remaining;
+}LCD_OPERATION_SEND_STRING_REQUEST_t;
 
 /************************************[4]INIT GENERAL STATES **********************************/
 typedef enum 
 {
-    INIT_START=0,
-    INIT_FUNCTION_SET,
-    INIT_DISPLAY_ON_OFF,
-    INIT_DISPLAY_CLEAR,
+    INIT_POWER_ON=0,
+    INIT_FUNCTION_SET_P1,
+    INIT_FUNCTION_SET_P2,    
+    INIT_DISPLAY_ON_OFF_P1,
+    INIT_DISPLAY_ON_OFF_P2,
+    INIT_DISPLAY_CLEAR_P1,
+    INIT_DISPLAY_CLEAR_P2,
     INIT_END
 }INIT_STATES_t;
 
@@ -116,40 +132,6 @@ typedef struct
     INIT_STATES_t STATE;
     uint32 COUNTER;
 }INIT_t;
-
-
-/**
- * EVERY THREAD STATES
-*/
-typedef enum 
-{
-    SEND_COMMAND=0,
-    WAIT
-}INIT_THREAD_STATES_t;
-
-/**
- * FUNCTION SET RECORD
-*/
-typedef struct
-{
-    INIT_THREAD_STATES_t STATE;
-    uint32 COUNTER;
-}FUNCTION_SET_t;
-
-/**
- * DISPLAY ON OFF RECORD
-*/
-typedef struct
-{
-    INIT_THREAD_STATES_t STATE;
-    uint32 COUNTER;
-}DISPLAY_ON_OFF_t;
-
-typedef struct 
-{
-    INIT_THREAD_STATES_t STATE;
-    uint32 COUNTER;
-}DISPLAY_CLEAR_t;
 /*-----------------------------------------------------------------------------------------*/
 /*                                  >> variables <<                                        */
 /*-----------------------------------------------------------------------------------------*/
@@ -157,67 +139,50 @@ typedef struct
 /**********************************[1]GENERAL USED *****************************************/
 extern const LCD_strLCDConfigration_t PIN_CONFIG[USED_LCD_PIN_NUMS];
 
-static TRIGGER_ENABLE_t TRIGGER_ENABLE ={.STATE=TRIGGER_ENABLE_ON,.COUNTER=0};
 /**********************************[2]LCD GENERAL ******************************************/
 static LCD_t LCD={.COUNTER=0,.MODE=OFF_MODE};
-/**********************************[3]INIT PROCESS *****************************************/
-static INIT_t INIT={.COUNTER=0,.STATE=INIT_START};
+/**********************************[3]INIT MODE *****************************************/
+static INIT_t INIT={.COUNTER=0,.STATE=INIT_POWER_ON};
 
-static FUNCTION_SET_t FUNCTION_SET ={.STATE=SEND_COMMAND,.COUNTER=0};
-static DISPLAY_ON_OFF_t DISPLAY_ON_OFF={.COUNTER=0,.STATE=SEND_COMMAND};
-static DISPLAY_CLEAR_t DISPLAY_CLEAR={.STATE=SEND_COMMAND,.COUNTER=0};
-/**********************************[4]INIT PROCESS *****************************************/
+/**********************************[4]OPERATION MODE *****************************************/
+static OPERATION_t OPERATION ={.COUNTER=0,.STATE=OPERATION_IDLE,.TYPE=9999};
 
+static LCD_OPERATION_SEND_STRING_REQUEST_t STRING={.len=0,.s=NULL_PTR,.Remaining=0}; 
+
+static OPERATION_THREAD_t WRITE_STRING={.STATE=SEND_CH_HIGH};
 /*-----------------------------------------------------------------------------------------*/
 /*                             >> Static functions <<                                      */
 /*-----------------------------------------------------------------------------------------*/
 
 /******************************** [1] GENERAL USED THREADS *********************************/
 
-static void WRITE_DataPins(uint8 DataORCMD)
+static void LCD_WRITE_PINS_THREAD(uint8 DataORCMD)
 {
     for(uint8 idx=0;idx<8;idx++)
     {
-        GPIO_SetPinValue(PIN_CONFIG[idx].LCD_PortNum,PIN_CONFIG[idx].LCD_PinNum,((DataORCMD>>idx)&0x01));
+        if((DataORCMD>>idx)&0x01)
+        {
+            GPIO_SetPinValue(PIN_CONFIG[idx].LCD_PortNum,PIN_CONFIG[idx].LCD_PinNum,PIN_STATE_HIGH);
+        }else
+        {
+            GPIO_SetPinValue(PIN_CONFIG[idx].LCD_PortNum,PIN_CONFIG[idx].LCD_PinNum,PIN_STATE_LOW);
+        }
+
     }
 }
 
-static PROCESS_STATE_t SEND_CommandAsync(uint8 CMD)
+static void SEND_COMMAND(uint8 CMD)
 {
-
+    LCD_WRITE_PINS_THREAD(CMD);
+    GPIO_SetPinValue(PIN_CONFIG[LCD_RS_PIN].LCD_PortNum,PIN_CONFIG[LCD_RS_PIN].LCD_PinNum,PIN_STATE_LOW);
 }
 
-static PROCESS_STATE_t SEND_DataAsync(uint8 DATA)
+static void SEND_DATA(uint8 DATA)
 {
-
+    LCD_WRITE_PINS_THREAD(DATA);
+    GPIO_SetPinValue(PIN_CONFIG[LCD_RS_PIN].LCD_PortNum,PIN_CONFIG[LCD_RS_PIN].LCD_PinNum,PIN_STATE_HIGH);
 }
 
-static PROCESS_STATE_t TriggerEnableAsync(void)
-{
-    TRIGGER_ENABLE.COUNTER+=UNIT_TIME_PERIOD;
-    switch (TRIGGER_ENABLE.STATE)
-    {
-    case TRIGGER_ENABLE_ON:
-        GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_HIGH);
-        if(TRIGGER_ENABLE.COUNTER>=1)
-        {
-            TRIGGER_ENABLE.STATE=TRIGGER_ENABLE_OFF;
-            TRIGGER_ENABLE.COUNTER=0;
-        }
-        break;
-
-    case TRIGGER_ENABLE_OFF:
-        GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_LOW);
-        if(TRIGGER_ENABLE.COUNTER>=1)
-        {
-            TRIGGER_ENABLE.STATE=TRIGGER_ENABLE_OFF;
-            TRIGGER_ENABLE.COUNTER=0;
-        }
-        break;    
-    default:
-        break;
-    }
-}
 
 /******************************** [2] INIT PROCESS AND IT'S THREADS *************************/
 
@@ -234,117 +199,186 @@ static void LCD_PINS_INIT_THREAD(void)
         GPIO_INIT_PIN(&LCD);
     }    
 }
-static void INIT_START_THREAD(void)
+static void INIT_POWER_ON_THREAD(void)
 {
-    if(INIT.COUNTER>=INIT_START_TIME)
+    INIT.COUNTER+=UNIT_TIME_PERIOD;
+    if(INIT.COUNTER>=INIT_POWER_ON_TIME)
     {
-        INIT.STATE=INIT_FUNCTION_SET;
+        INIT.STATE=INIT_FUNCTION_SET_P1;
         INIT.COUNTER=0;
     }
        
 }
 
-static void INIT_FUNCTION_SET_THREAD(void)
+static void INIT_FUNCTION_SET_P1_THREAD(void)
 {
-    uint8 ret;
-    switch (FUNCTION_SET.STATE)
-    {
-    case SEND_COMMAND:  
-    ret=SEND_CommandAsync(FUNCTION_SET_CMD);
-    if(PROCESS_DONE==ret){FUNCTION_SET.STATE=WAIT;}
-        break;
-
-    case WAIT:
-    if(INIT.COUNTER>=INIT_FUNCTION_SET_TIME)
-    {
-        INIT.STATE=INIT_DISPLAY_ON_OFF;
-        INIT.COUNTER=0;
-    }
-        break;    
-    default:
-        break;
-    }
-
+    SEND_COMMAND(FUNCTION_SET_CMD);
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_HIGH);
+    INIT.STATE=INIT_FUNCTION_SET_P2;
 }
 
-static void INIT_DISPLAY_ON_OFF_THREAD(void)
+static void INIT_FUNCTION_SET_P2_THREAD(void)
 {
-    uint8 ret;
-    switch (DISPLAY_ON_OFF.STATE)
-    {
-    case SEND_COMMAND:
-    ret=SEND_CommandAsync(DISPLAY_ON_OFF_CMD);
-    if(PROCESS_DONE==ret){FUNCTION_SET.STATE=WAIT;}
-        break;
-    case WAIT:
-    if(INIT.COUNTER>=INIT_DISPLAY_ON_OFF_TIME)
-    {
-        INIT.STATE=INIT_DISPLAY_CLEAR;
-        INIT.COUNTER=0;
-    }
-    default:
-        break;
-    }
-
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_LOW);
+    INIT.STATE=INIT_DISPLAY_ON_OFF_P1;
 }
 
-static void INIT_DISPLAY_CLEAR_THREAD(void)
+static void INIT_DISPLAY_ON_OFF_P1_THREAD(void)
 {
-    uint8 ret;
-    switch (DISPLAY_CLEAR.STATE)
-    {
-    case SEND_COMMAND:
-    ret=SEND_CommandAsync(DISPLAY_CLEAR_CMD);
-    if(PROCESS_DONE==ret){FUNCTION_SET.STATE=WAIT;}
-        break;
+    SEND_COMMAND(DISPLAY_ON_OFF_CMD);
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_HIGH);
+    INIT.STATE=INIT_DISPLAY_ON_OFF_P2;
+}
+static void INIT_DISPLAY_ON_OFF_P2_THREAD(void)
+{
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_LOW);
+    INIT.STATE=INIT_DISPLAY_CLEAR_P1;
+}
 
-    case WAIT:
-    if(INIT.COUNTER>=INIT_DISPLAY_CLEAR_TIME)
-    {
-        INIT.STATE=INIT_END;
-        INIT.COUNTER=0;
-    }    
-    default:
-        break;
-    }
+static void INIT_DISPLAY_CLEAR_P1_THREAD(void)
+{
+    SEND_COMMAND(DISPLAY_CLEAR_CMD);
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_HIGH);
+    INIT.STATE=INIT_DISPLAY_CLEAR_P2;
+}
 
+static void INIT_DISPLAY_CLEAR_P2_THREAD(void)
+{
+    GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_LOW);
+    INIT.STATE=INIT_END;
 }
 
 static void INIT_END_THREAD()
 {
     LCD.MODE=OPERATION_MODE;
     LCD.COUNTER=0;
+    INIT.STATE=INIT_POWER_ON;
 }
 
-static void INIT_Process(void)
+static void INIT_PROCESS(void)
 {
 
-
-    INIT.COUNTER+=UNIT_TIME_PERIOD;
     switch (INIT.STATE)
     {
-    case INIT_START         : INIT_START_THREAD();           break;
+    case INIT_POWER_ON         : INIT_POWER_ON_THREAD();           break;
 
-    case INIT_FUNCTION_SET  : INIT_FUNCTION_SET_THREAD();    break;
+    case INIT_FUNCTION_SET_P1  : INIT_FUNCTION_SET_P1_THREAD();    break;
 
-    case INIT_DISPLAY_ON_OFF: INIT_DISPLAY_ON_OFF_THREAD();  break;
-        
-    case INIT_DISPLAY_CLEAR : INIT_DISPLAY_CLEAR_THREAD();   break;
+    case INIT_FUNCTION_SET_P2  : INIT_FUNCTION_SET_P2_THREAD();    break;
+
+    case INIT_DISPLAY_ON_OFF_P1: INIT_DISPLAY_ON_OFF_P1_THREAD();  break;
+
+    case INIT_DISPLAY_ON_OFF_P2: INIT_DISPLAY_ON_OFF_P2_THREAD();  break;
+
+    case INIT_DISPLAY_CLEAR_P1 : INIT_DISPLAY_CLEAR_P1_THREAD();   break;
     
-    case INIT_END           : INIT_END_PROCESS_THREAD();     break;                            
+    case INIT_DISPLAY_CLEAR_P2 : INIT_DISPLAY_CLEAR_P2_THREAD();   break;
     
-    default:                                                 break;
+    case INIT_END           : INIT_END_THREAD();                   break;                            
+    
+    default:                                                       break;
     }
 }
 /************************************** OPERATION PROCESS AND IT's THREADS ********************/
-static void OPERATION_PROCESS(void)
+
+void OPERATION_SET_POS_THREAD(void)
 {
 
+}
+
+/*
+    if (remaining_chars > 0) 
+    {
+        if (Global_LCDEnable_State == LCD_enuEnableOff) 
+        {
+            HLCD_StaticSendCommand(LCD_strUsrData.String[LCD_strUsrData.String_Size - remaining_chars],LCD_RESETVALUE,LCD_ENABLEVALUE);
+            Global_LCDEnable_State = LCD_enuEnableOn;
+            HLCD_vidStaticSetEnableBit(LCD_enuEnableOn);
+        } 
+        else
+        { 
+            Global_LCDEnable_State = LCD_enuEnableOff;
+            HLCD_vidStaticSetEnableBit(LCD_enuEnableOff);
+            remaining_chars--;
+        }
+    } 
+    else 
+    {
+        Global_LCDWrite_State = Write_Done; 
+    }
+*/
+void OPERATION_WRITE_STRING_THREAD(void)
+{
+    if(STRING.Remaining>0){
+        switch (WRITE_STRING.STATE)
+        {
+            case SEND_CH_HIGH:
+            SEND_DATA(STRING.s[STRING.len-STRING.Remaining]);
+            GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_HIGH);
+            WRITE_STRING.STATE=SEND_CH_LOW;
+             break;
+             case SEND_CH_LOW:
+            GPIO_SetPinValue(PIN_CONFIG[LCD_ENABLE_PIN].LCD_PortNum,PIN_CONFIG[LCD_ENABLE_PIN].LCD_PinNum,PIN_STATE_LOW);
+            WRITE_STRING.STATE=SEND_CH_HIGH;
+            STRING.Remaining--;;
+             break;
+             default:
+             break;
+        }
+    
+    }
+    else
+    {
+        OPERATION.STATE==OPERATION_IDLE;
+    }
+}
+void OPERATION_WRITE_NUM_THREAD(void)
+{
+
+}
+void OPERATION_CLEAR_SCREEN_THREAD(void)
+{
+    
+}
+
+void OPERATION_BUSY_THREAD(void)
+{
+    switch (OPERATION.TYPE)
+    {
+    case OPERATION_WRTIE_STRING:
+    OPERATION_WRITE_STRING_THREAD();
+        break;
+    case OPERATION_CLEAR_SCREEN:
+    OPERATION_CLEAR_SCREEN_THREAD();
+        break;    
+    case OPERATION_SET_POSITION:
+    OPERATION_SET_POS_THREAD();
+        break;
+    case OPERATION_WRITE_NUM:
+    OPERATION_WRITE_NUM_THREAD();
+        break;    
+    default:
+        break;
+    }
+}
+static void OPERATION_PROCESS(void)
+{
+    switch (OPERATION.STATE)
+    {
+    case OPERATION_IDLE:
+        /* DO NOTHING */
+        break;
+    case OPERATION_BUSY:
+    OPERATION_BUSY_THREAD();
+        break;
+    default:
+        break;
+    }
 }
 
 /************************************** LCD MODULE GENERAL RUNNABLE ***************************/
 
-static void LCD_Runnable(void)
+ void LCD_Runnable(void)
 {
 
     switch (LCD.MODE)
@@ -371,18 +405,23 @@ void LCD_InitAsync(void)
     LCD_PINS_INIT_THREAD();   
     LCD.MODE=INIT_MODE;
 }
-
-LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size, uint8 X_Postion, uint8 Y_Postion)
+LCD_Error_t LCD_SetPositionAsync(uint8 x_pos,uint8 y_pos)
 {
-
+    
+}
+LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size)
+{
+    if(OPERATION.STATE==OPERATION_IDLE)
+    {
+        OPERATION.STATE=OPERATION_BUSY;
+        OPERATION.TYPE=OPERATION_WRTIE_STRING;
+        STRING.len=Size;
+        STRING.s=String;
+        STRING.Remaining=Size;
+    }  
 }
 
 LCD_Error_t LCD_ClearScreenAsync(void)
-{
-
-}
-
-LCD_Status_t LCD_GetStatus(void)
 {
 
 }

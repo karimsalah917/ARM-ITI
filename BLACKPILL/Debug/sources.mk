@@ -37,6 +37,7 @@ src/01-MCAL/GPIO \
 src/01-MCAL/NVIC \
 src/01-MCAL/RCC \
 src/01-MCAL/SYSTICK \
+src/02-HAL/LCD \
 src/02-HAL/LED \
 src/02-HAL/SWITCH \
 src/03-APP \

@@ -29,7 +29,7 @@
  *  2-LCD_CURSOR_OFF
  * 
  */
-#define LCD_CURSOR_MODE                LCD_CURSOR_ON
+#define LCD_CURSOR_MODE                LCD_CURSOR_OFF
 
 /*
  *  CURSOR_BLINKING_MODE  Options

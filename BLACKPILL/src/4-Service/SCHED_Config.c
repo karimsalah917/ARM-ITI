@@ -31,16 +31,25 @@
  * which controls the traffic light state machine.
  */
 const RunnableTask_t RUN_LIST[_Runnable_no] = {
-    [Run1] = {
+
+    [Run1]=
+    {
+        .TaskName="LCD TEST APP",
+        .InitialDelayMS=100,
+        .PeriodicityMS=100,
+        .CallBack=Test_LCD_APP_Runnable
+    },
+        [Run2]=
+    {
+        .TaskName="LCD MAIN PROGRAM",
+        .InitialDelayMS=0,
+        .PeriodicityMS=2,
+        .CallBack=LCD_Runnable
+    },
+        [Run3] = {
         .TaskName = "LED State Machine",
         .PeriodicityMS = 100,
-        .InitialDelayMS =100,
+        .InitialDelayMS =10000,
         .CallBack = TrafficLight_Runnable
-    },
-    [Run2] = {
-        .TaskName = "LCD task",
-        .PeriodicityMS = 2,
-        .InitialDelayMS = 0,
-        .CallBack = LCD_Runnable
     }
 };

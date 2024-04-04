@@ -31,6 +31,7 @@
 #include <stdlib.h>
 #include "diag/trace.h"
 #include "../include/00-LIB/STD.h"
+#include "../include/02-HAL/LCD/LCD.h"
 
 #include "../include/4-Service/SCHED.h"
 #include "../include/4-Service/CLOCK_CONFIG.h"
@@ -61,6 +62,7 @@ void main(int argc, char* argv[])
 {
     CLOCK_CONFIG();
     TrafficLight_Init();
+    LCD_InitAsync();
     SCHED_Init();
     SCHED_Start();
 }

@@ -11,7 +11,7 @@
 
 /**********************************  Includes **********************************************/
 #include "../../../include/02-HAL/LED/LED.h"
-/********************************** Definitions ********************************************/
+/******************** Definitions ********************************************/
 /*none*/
 /**********************************   Types ************************************************/
 /*none*/
@@ -36,19 +36,19 @@ const LED_CONFG_t LEDARR[_LED_enum]=
 
     [TL_RED]=
     {
-        .PORT=LED_PORTA,
+        .PORT=LED_PORTB,
         .PIN=LED_PIN0,
         .Connection=LED_Connection_ActiveHIGH
     },
     [TL_YELLOW]=
     {
-        .PORT=LED_PORTA,
+        .PORT=LED_PORTB,
         .PIN=LED_PIN1,
         .Connection=LED_Connection_ActiveHIGH
     },
     [TL_GREEN]=
     {
-        .PORT=LED_PORTA,
+        .PORT=LED_PORTB,
         .PIN=LED_PIN2,
         .Connection=LED_Connection_ActiveHIGH
     }

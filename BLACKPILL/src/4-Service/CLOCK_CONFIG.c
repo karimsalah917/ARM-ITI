@@ -10,7 +10,7 @@ void CLOCK_CONFIG(void)
    RCC_Enable_CLOCK(CLOCK_HSE);
    RCC_Select_SYSCLOCK(SYSCLOCK_HSE);
    RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOA);
-
+   RCC_Enable_AHB1Peripheral(AHB1peripheral_GPIOB);
    /**
     * SysTick Configuration
    */

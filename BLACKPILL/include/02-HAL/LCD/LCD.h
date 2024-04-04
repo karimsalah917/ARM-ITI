@@ -174,29 +174,40 @@ void LCD_InitAsync(void);
 
 /**
  * @brief Writes a string asynchronously to the LCD display.
+ * 
  * @param String Pointer to the string to be written.
- * @param Size Size of the string.
- * @param X_Postion X position where the string should start.
- * @param Y_Postion Y position where the string should start.
- * @return LCD_Error_t Error code indicating success or failure of the operation.
+ * @param Size Size of the string to be written.
+ * @return LCD_Error_t Returns an error code indicating the success or failure of the operation.
+ *                    Possible error codes include:
+ *                        - LCD_OK: Operation completed successfully.
+ *                        - LCD_NOK: Operation failed.
+ * 
+ * This function writes a string to the LCD display asynchronously. The size parameter allows specifying the length
+ * of the string to be written. The function returns an error code indicating the success or failure of the operation.
  */
-LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size, uint8 X_Postion, uint8 Y_Postion);
+LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size);
+
+
+/**
+ * @brief Sets the position asynchronously on the LCD display.
+ * 
+ * @param x_pos The x-coordinate position on the display.
+ * @param y_pos The y-coordinate position on the display.
+ * @return LCD_Error_t Returns an error code indicating the success or failure of the operation.
+ *                    Possible error codes include:
+ *                        - LCD_OK: Operation completed successfully.
+ *                        - LCD_NOK: Operation failed.
+ * 
+ * This function sets the position on the LCD display asynchronously. The x_pos parameter specifies
+ * the horizontal position, and y_pos specifies the vertical position. The function returns an error
+ * code indicating the success or failure of the operation.
+ */
+LCD_Error_t LCD_SetPositionAsync(uint8 x_pos, uint8 y_pos);
 
 /**
  * @brief Clears the entire screen of the LCD display.
  * @return LCD_Error_t Error code indicating success or failure of the operation.
  */
 LCD_Error_t LCD_ClearScreenAsync(void);
-
-/**
- * @brief Retrieves the status of the LCD, indicating whether it is ready for further operations.
- * 
- * As the LCD functions are asynchronous, it's essential to check whether the LCD operation
- * has been completed before proceeding with another operation. This function provides
- * information on the readiness of the LCD.
- * 
- * @return LCD_Status_t Status indicating if the LCD is ready or not.
- */
-LCD_Status_t LCD_GetStatus(void);
 
 

@@ -41,19 +41,26 @@ static void TickCallBack(void)
 static void SCHED(void)
 {
     /**
-     * functionlaties of the SCHED function
+     * Functionality of the SCHED function
      * [1] Looping over the Array of Runnables and check the remaining time of each one 
-     * so execute it rigth now or not now
+     * so execute it right now or not now
     */
-   uint32 idx=0;
-   for(idx=0;idx<_Runnable_no;idx++)
+   uint32 idx = 0;
+   for(idx = 0; idx < _Runnable_no; idx++)
    {
-    //checing if the instant of the run has come
-    if((TimeStamp-RUN_LIST[idx].InitialDelayMS)%RUN_LIST[idx].PeriodicityMS==0)
-    {
-        //executing the callback if the instant has come
-        RUN_LIST[idx].CallBack();
-    }
+        // Checking if the initial delay has passed for the task
+        if(TimeStamp >= (RUN_LIST[idx].InitialDelayMS + RUN_LIST[idx].PeriodicityMS))
+        {
+            // Calculate the time since the task was last executed
+            uint64 elapsedTime = TimeStamp - RUN_LIST[idx].InitialDelayMS;
+
+            // Check if it's time to execute the task
+            if(elapsedTime % RUN_LIST[idx].PeriodicityMS == 0)
+            {
+                // Execute the task's callback
+                RUN_LIST[idx].CallBack();
+            }
+        }
    }
    TimeStamp++;
 }
