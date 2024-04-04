@@ -62,7 +62,7 @@ void main(int argc, char* argv[])
 {
     CLOCK_CONFIG();
     TrafficLight_Init();
-    LCD_InitAsync();
+    lcd_init_async();
     SCHED_Init();
     SCHED_Start();
 }

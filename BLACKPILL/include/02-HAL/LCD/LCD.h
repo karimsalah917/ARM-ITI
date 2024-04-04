@@ -5,20 +5,20 @@
 /* Module       : LCD                                                                      */
 /* Version      : v1.0                                                                     */
 /* Date         : 20/03/2024                                                               */
-/* File Details : Header file for LCD  Driver                                              */
+/* File Details : Header file for LCD Driver                                                */
 /* Target       : STM32f401cc                                                              */
 /*******************************************************************************************/
 #pragma once
-/**********************************  Includes **********************************************/
-#include "../../00-LIB/STD.h"
-/********************************** Definitions ********************************************/
-#define LCD_SHIFTING_LEFT           0x18
-#define LCD_SHIFTING_RIGHT          0x1C
-/**********************************   Types ************************************************/
 
-/**
- * LCD INITIALISATION
-*/
+/**********************************  Includes **********************************************/
+#include "../../00-LIB/STD.h"  // Include for standard definitions
+
+/********************************** Definitions ********************************************/
+#define LCD_SHIFTING_LEFT           0x18 // Command for shifting display to the left
+#define LCD_SHIFTING_RIGHT          0x1C // Command for shifting display to the right
+#define LCD_CLEAR_SCREEN            0x01 // Command for clearing display
+
+/**********************************   Types ************************************************/
 
 /**
  * @brief Enumeration for LCD error codes.
@@ -91,92 +91,73 @@ typedef enum
 } LCD_BIT_MODE_t;
 
 /**
- * LCD CONNECTION INITIALISATION
-*/
+ * @brief Structure for LCD pin configuration.
+ * Contains port and pin number for each LCD pin.
+ */
 typedef struct
 {
-   uint32   LCD_PortNum;
-   uint32   LCD_PinNum;
+   uint32   LCD_PortNum; /**< Port number for the LCD pin */
+   uint32   LCD_PinNum;  /**< Pin number for the LCD pin */
 } LCD_strLCDConfigration_t;
 
+/**
+ * @brief Enumeration for LCD port numbers.
+ * Specifies the port number for LCD pin configuration.
+ */
 typedef enum 
 {
-    LCD_PORTA = 0x0,
-    LCD_PORTB = 0x1,
-    LCD_PORTC = 0x2
-}
-LCD_PORT_t;
-
-typedef enum 
-{
-    LCD_PIN0  = 0x00000000,    
-    LCD_PIN1  = 0x00000001,    
-    LCD_PIN2  = 0x00000002,    
-    LCD_PIN3  = 0x00000003,    
-    LCD_PIN4  = 0x00000004,    
-    LCD_PIN5  = 0x00000005,    
-    LCD_PIN6  = 0x00000006,    
-    LCD_PIN7  = 0x00000007,    
-    LCD_PIN8  = 0x00000008,    
-    LCD_PIN9  = 0x00000009,    
-    LCD_PIN10 = 0x0000000A,    
-    LCD_PIN11 = 0x0000000B,    
-    LCD_PIN12 = 0x0000000C,    
-    LCD_PIN13 = 0x0000000D,    
-    LCD_PIN14 = 0x0000000E,    
-    LCD_PIN15 = 0x0000000F       
-}LCD_PIN_t;
+    LCD_PORTA = 0x0, /**< Port A */
+    LCD_PORTB = 0x1, /**< Port B */
+    LCD_PORTC = 0x2  /**< Port C */
+} LCD_PORT_t;
 
 /**
- * LCD OPERATION 
-*/
+ * @brief Enumeration for LCD pin numbers.
+ * Specifies the pin number for LCD pin configuration.
+ */
+typedef enum 
+{
+    LCD_PIN0  = 0x00000000, /**< Pin 0 */
+    LCD_PIN1  = 0x00000001, /**< Pin 1 */
+    LCD_PIN2  = 0x00000002, /**< Pin 2 */
+    LCD_PIN3  = 0x00000003, /**< Pin 3 */
+    LCD_PIN4  = 0x00000004, /**< Pin 4 */
+    LCD_PIN5  = 0x00000005, /**< Pin 5 */
+    LCD_PIN6  = 0x00000006, /**< Pin 6 */
+    LCD_PIN7  = 0x00000007, /**< Pin 7 */
+    LCD_PIN8  = 0x00000008, /**< Pin 8 */
+    LCD_PIN9  = 0x00000009, /**< Pin 9 */
+    LCD_PIN10 = 0x0000000A, /**< Pin 10 */
+    LCD_PIN11 = 0x0000000B, /**< Pin 11 */
+    LCD_PIN12 = 0x0000000C, /**< Pin 12 */
+    LCD_PIN13 = 0x0000000D, /**< Pin 13 */
+    LCD_PIN14 = 0x0000000E, /**< Pin 14 */
+    LCD_PIN15 = 0x0000000F  /**< Pin 15 */
+} LCD_PIN_t;
 
+/**
+ * @brief Enumeration for LCD operation status.
+ * Specifies whether the LCD is ready or busy.
+ */
 typedef enum
 {
- LCD_Position0,
- LCD_Position1,
- LCD_Position2,
- LCD_Position3,
- LCD_Position4,
- LCD_Position5,
- LCD_Position6,
- LCD_Position7,
- LCD_Position8,
- LCD_Position9,
- LCD_Position10,
- LCD_Position11,
- LCD_Position12,
- LCD_Position13,
- LCD_Position14,
- LCD_Position15
-}LCD_DDRAM_XPosition;
+    LCD_Status_READY = 0, /**< LCD is ready */
+    LCD_Status_BUSY       /**< LCD is busy */
+} LCD_Status_t;
 
-typedef enum
-{
- LCD_FirstLine,
- LCD_SecondLine
-}LCD_DDRAM_YPosition;
-
-typedef enum
-{
-    LCD_Status_READY=0,
-    LCD_Status_BUSY
-
-}
-LCD_Status_t;
 /*********************************** API's *************************************************/
  
 /**
- * @brief Initializes the LCD display.
+ * @brief Initializes the LCD display asynchronously.
  * This function should be called after pin initialization.
  */
-void LCD_InitAsync(void);
+void lcd_init_async(void);
 
 /**
  * @brief Writes a string asynchronously to the LCD display.
  * 
- * @param String Pointer to the string to be written.
- * @param Size Size of the string to be written.
+ * @param string Pointer to the string to be written.
+ * @param size Size of the string to be written.
  * @return LCD_Error_t Returns an error code indicating the success or failure of the operation.
  *                    Possible error codes include:
  *                        - LCD_OK: Operation completed successfully.
@@ -185,8 +166,7 @@ void LCD_InitAsync(void);
  * This function writes a string to the LCD display asynchronously. The size parameter allows specifying the length
  * of the string to be written. The function returns an error code indicating the success or failure of the operation.
  */
-LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size);
-
+LCD_Error_t lcd_write_string_async(const char* string, uint8 size);
 
 /**
  * @brief Sets the position asynchronously on the LCD display.
@@ -202,12 +182,10 @@ LCD_Error_t LCD_WriteStringAsync(const char* String, uint8 Size);
  * the horizontal position, and y_pos specifies the vertical position. The function returns an error
  * code indicating the success or failure of the operation.
  */
-LCD_Error_t LCD_SetPositionAsync(uint8 x_pos, uint8 y_pos);
+LCD_Error_t lcd_set_position_async(uint8 x_pos, uint8 y_pos);
 
 /**
- * @brief Clears the entire screen of the LCD display.
+ * @brief Clears the entire screen of the LCD display asynchronously.
  * @return LCD_Error_t Error code indicating success or failure of the operation.
  */
-LCD_Error_t LCD_ClearScreenAsync(void);
-
-
+LCD_Error_t lcd_send_command_async(uint8 CMD);

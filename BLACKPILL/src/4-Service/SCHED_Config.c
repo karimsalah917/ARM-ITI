@@ -36,7 +36,7 @@ const RunnableTask_t RUN_LIST[_Runnable_no] = {
     {
         .TaskName="LCD TEST APP",
         .InitialDelayMS=100,
-        .PeriodicityMS=100,
+        .PeriodicityMS=250,
         .CallBack=Test_LCD_APP_Runnable
     },
         [Run2]=

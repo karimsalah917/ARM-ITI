@@ -5,13 +5,14 @@
 /* Module       : LCD                                                                      */
 /* Version      : v1.0                                                                     */
 /* Date         : 20/03/2024                                                               */
-/* File Details : Source Configuration file for LCD  Driver                                */
+/* File Details : Source Configuration file for LCD Driver                                 */
 /* Target       : STM32f401cc                                                              */
 /*******************************************************************************************/
 
 /**********************************  Includes **********************************************/
 #include "../../../include/02-HAL/LCD/LCD.h"
 #include "../../../include/02-HAL/LCD/LCD_Config.h"
+
 /********************************** Definitions ********************************************/
 #define LCD_D0_PIN                  0
 #define LCD_D1_PIN                  1
@@ -24,11 +25,12 @@
 #define LCD_ENABLE_PIN              8
 #define LCD_RW_PIN                  9
 #define LCD_RS_PIN                  10
+
 /**********************************   Variables ********************************************/
 
 /**
- *  CHOOSE THE CORESPONDING CONNECTION TO EACH LCD PIN
- * @warning be carful of the mode youre operating at 8bit/4bit
+ *  Configure LCD pins according to their corresponding connection
+ *  @warning Be careful of the mode you're operating in (8bit/4bit)
 */
 const LCD_strLCDConfigration_t PIN_CONFIG[USED_LCD_PIN_NUMS]=
 {
