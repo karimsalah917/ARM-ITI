@@ -185,7 +185,17 @@ LCD_Error_t lcd_write_string_async(const char* string, uint8 size);
 LCD_Error_t lcd_set_position_async(uint8 x_pos, uint8 y_pos);
 
 /**
- * @brief Clears the entire screen of the LCD display asynchronously.
- * @return LCD_Error_t Error code indicating success or failure of the operation.
+ * @brief Sends a command asynchronously to the LCD display.
+ * 
+ * @param CMD The command to be sent.
+ * @return LCD_Error_t Returns an error code indicating the success or failure of the operation.
+ *                    Possible error codes include:
+ *                        - LCD_OK: Operation completed successfully.
+ *                        - LCD_NOK: Operation failed.
+ * 
+ * This function sends a command to the LCD display asynchronously. The CMD parameter specifies
+ * the command to be sent. The function returns an error code indicating the success or failure
+ * of the operation.
  */
 LCD_Error_t lcd_send_command_async(uint8 CMD);
+
