@@ -2,17 +2,16 @@
 /* Author       : Karim Salah Fathey                                                       */
 /* Authority    : Information Technology Institute                                         */
 /* Layer        : Hardware Abstraction Layer (HAL)                                         */
-/* Module       : xxxx                                                                     */
+/* Module       : SWITCH                                                                   */
 /* Version      : v1.0                                                                     */
-/* Date         : xx/xx/2024                                                               */
-/* File Details : Header Configuration file for xxxx Driver                                */
+/* Date         : 22/02/2024                                                               */
+/* File Details : Header Configuration file for SWITCH Driver                              */
 /* Target       : STM32f401cc                                                              */
 /*******************************************************************************************/
-
-/**********************************  Includes **********************************************/
-
-/********************************** Definitions ********************************************/
-/**
- * User Should Define 
-*/
+#pragma once
 /**********************************   Types ************************************************/
+typedef enum 
+{
+    TEST_SWITCH,
+    _SWITCH_enum   /**< Enumeration boundary marker */
+} SWITCHS_t;

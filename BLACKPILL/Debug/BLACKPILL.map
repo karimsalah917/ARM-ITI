@@ -1242,32 +1242,45 @@ Discarded input sections
  .debug_macro   0x00000000      0x898 ./src/03-APP/testLCD.o
  .debug_macro   0x00000000       0x10 ./src/03-APP/testLCD.o
  .group         0x00000000        0x8 ./src/02-HAL/SWITCH/SWITCH.o
+ .group         0x00000000        0x8 ./src/02-HAL/SWITCH/SWITCH.o
  .text          0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH.o
  .data          0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH.o
  .bss           0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH.o
- .debug_info    0x00000000       0x21 ./src/02-HAL/SWITCH/SWITCH.o
- .debug_abbrev  0x00000000       0x13 ./src/02-HAL/SWITCH/SWITCH.o
+ .text.SWITCH_INIT
+                0x00000000       0x40 ./src/02-HAL/SWITCH/SWITCH.o
+ .text.SWITCH_GetStatus
+                0x00000000       0x24 ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_info    0x00000000      0x44c ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_abbrev  0x00000000      0x11f ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_loc     0x00000000       0xa1 ./src/02-HAL/SWITCH/SWITCH.o
  .debug_aranges
-                0x00000000       0x18 ./src/02-HAL/SWITCH/SWITCH.o
- .debug_macro   0x00000000       0x11 ./src/02-HAL/SWITCH/SWITCH.o
+                0x00000000       0x28 ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_ranges  0x00000000       0x18 ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_macro   0x00000000       0x34 ./src/02-HAL/SWITCH/SWITCH.o
  .debug_macro   0x00000000      0x898 ./src/02-HAL/SWITCH/SWITCH.o
- .debug_line    0x00000000       0x3e ./src/02-HAL/SWITCH/SWITCH.o
- .debug_str     0x00000000     0x255c ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_macro   0x00000000       0x10 ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_line    0x00000000      0x1da ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_str     0x00000000     0x2ae1 ./src/02-HAL/SWITCH/SWITCH.o
  .comment       0x00000000       0x6f ./src/02-HAL/SWITCH/SWITCH.o
+ .debug_frame   0x00000000       0x4c ./src/02-HAL/SWITCH/SWITCH.o
  .ARM.attributes
                 0x00000000       0x33 ./src/02-HAL/SWITCH/SWITCH.o
+ .group         0x00000000        0x8 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .group         0x00000000        0x8 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .text          0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .data          0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .bss           0x00000000        0x0 ./src/02-HAL/SWITCH/SWITCH_Config.o
- .debug_info    0x00000000       0x21 ./src/02-HAL/SWITCH/SWITCH_Config.o
- .debug_abbrev  0x00000000       0x13 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .rodata.SWITCHARR
+                0x00000000        0x3 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_info    0x00000000      0x1b7 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_abbrev  0x00000000       0x98 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .debug_aranges
                 0x00000000       0x18 ./src/02-HAL/SWITCH/SWITCH_Config.o
- .debug_macro   0x00000000       0x11 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_macro   0x00000000       0x28 ./src/02-HAL/SWITCH/SWITCH_Config.o
  .debug_macro   0x00000000      0x898 ./src/02-HAL/SWITCH/SWITCH_Config.o
- .debug_line    0x00000000       0x45 ./src/02-HAL/SWITCH/SWITCH_Config.o
- .debug_str     0x00000000     0x2563 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_macro   0x00000000       0x10 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_line    0x00000000       0xe2 ./src/02-HAL/SWITCH/SWITCH_Config.o
+ .debug_str     0x00000000     0x27bd ./src/02-HAL/SWITCH/SWITCH_Config.o
  .comment       0x00000000       0x6f ./src/02-HAL/SWITCH/SWITCH_Config.o
  .ARM.attributes
                 0x00000000       0x33 ./src/02-HAL/SWITCH/SWITCH_Config.o
@@ -1956,7 +1969,6 @@ END GROUP
                 0x08001e08                RUN_LIST
  .rodata.str1.4
                 0x08001e38        0xc ./src/03-APP/testLCD.o
-                                  0xb (size before relaxing)
  .rodata.LEDARR
                 0x08001e44       0x18 ./src/02-HAL/LED/LED_Config.o
                 0x08001e44                LEDARR

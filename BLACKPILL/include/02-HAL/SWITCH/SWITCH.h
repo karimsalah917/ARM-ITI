@@ -122,7 +122,7 @@ SWITCH_Error_t SWITCH_INIT(void);
  *         - SWITCH_INVALID_NAME: The provided switch name is invalid or not recognized.
  *         - SWITCH_ERROR: An unspecified error occurred during the operation.
  */
-SWITCH_Error_t SWITCH_GetStatus(SWITCH_t COPY_SWITCH_NAME, uint8* COPY_SWITCH_STATUS);
+SWITCH_Error_t SWITCH_GetStatus(SWITCHS_t COPY_SWITCH_NAME, uint8* COPY_SWITCH_STATUS);
 
 
 
