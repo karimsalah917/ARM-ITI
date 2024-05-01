@@ -12,7 +12,7 @@ void Test_LCD_APP_Runnable(void)
 	loc_variable=1;
 		break;
 	case 1:
-	lcd_write_string_async("TINA SALAH",10);
+	lcd_write_string_async("Hassan Eladawy",14);
 	loc_variable=2;
 		break;
 	case 2:

@@ -20,6 +20,7 @@
 typedef enum {
     UART_OK = 0,            // Operation successful
     UART_NOK,
+    UART_INVALID_INPUT,
     UART_ERROR,             // Generic error
     UART_BUSY,              // UART is busy, cannot initiate operation
     UART_TIMEOUT,           // Timeout occurred during operation
@@ -33,34 +34,34 @@ typedef enum {
 
 typedef enum 
 {
-    UART_Peri_1,
+    UART_Peri_1=0,
     UART_Peri_2,
-    UART_Peri_3
+    UART_Peri_6
 }UART_Peri_t;
 
 typedef enum 
 {
-    UART_ParityOption_Disable,
+    UART_ParityOption_Disable=0,
     UART_ParityOption_Odd,
     UART_ParityOption_EVEN
 }UART_ParityOption_t;
 
 typedef enum 
 {
-    UART_WordLengthOption_8,
+    UART_WordLengthOption_8=0,
     UART_WordLengthOption_9
 }UART_WordLengthOption_t;
 
 typedef enum 
 {
-    UART_StopBitsOption_1,
+    UART_StopBitsOption_1=0,
     UART_StopBitsOption_2
 }UART_StopBitsOption_t;
 
 typedef enum 
 {
 UART_OverSamplingOption_16,
-UART_OverSamplingOption_8
+UART_OverSamplingOption_8 =0x00008000
 }UART_OverSamplingOption_t;
 
 typedef void (*UART_CB)(void);
@@ -69,16 +70,17 @@ typedef uint8* UART_Buffer;
 
 typedef struct  
 {
-    uint32                         UART_BaudRate     ;
-    UART_WordLengthOption_t        UART_WordLength   ;
-    UART_ParityOption_t            UART_Parity       ;
-    UART_StopBitsOption_t          UART_StopBits     ;
-    UART_OverSamplingOption_t      UART_OverSampling ;
+    UART_Peri_t                    Peri         ;
+    uint32                         BaudRate     ;
+    UART_WordLengthOption_t        WordLength   ;
+    UART_ParityOption_t            Parity       ;
+    UART_StopBitsOption_t          StopBits     ;
+    UART_OverSamplingOption_t      OverSampling ;
 }UART_CFG_t;
 
 typedef struct
 {
-    UART_Peri_t   UART_Peri ;
+    UART_Peri_t   Peri ;
     UART_Buffer   Buffer    ;
     uint16        Lenght    ;
     UART_CB       CB        ;

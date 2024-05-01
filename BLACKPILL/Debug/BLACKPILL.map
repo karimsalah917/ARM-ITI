@@ -1969,6 +1969,7 @@ END GROUP
                 0x08001e08                RUN_LIST
  .rodata.str1.4
                 0x08001e38        0xc ./src/03-APP/testLCD.o
+                                  0xb (size before relaxing)
  .rodata.LEDARR
                 0x08001e44       0x18 ./src/02-HAL/LED/LED_Config.o
                 0x08001e44                LEDARR

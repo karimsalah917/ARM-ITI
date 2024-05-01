@@ -1,25 +1,105 @@
-18:13:45 **** Incremental Build of configuration Debug for project BLACKPILL ****
+23:45:00 **** Incremental Build of configuration Debug for project BLACKPILL ****
 make all 
-'Building file: ../src/main.c'
+'Building file: ../src/01-MCAL/UART/UART.c'
 'Invoking: GNU Arm Cross C Compiler'
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: BLACKPILL.elf'
-'Invoking: GNU Arm Cross C++ Linker'
-arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"BLACKPILL.map" --specs=nano.specs -o "BLACKPILL.elf" ./system/src/newlib/assert.o ./system/src/newlib/cxx.o ./system/src/newlib/exit.o ./system/src/newlib/sbrk.o ./system/src/newlib/startup.o ./system/src/newlib/syscalls.o  ./system/src/diag/trace-impl.o ./system/src/diag/trace.o  ./system/src/cortexm/exception-handlers.o ./system/src/cortexm/initialize-hardware.o ./system/src/cortexm/reset-hardware.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/4-Service/CLOCK_CONFIG.o ./src/4-Service/SCHED.o ./src/4-Service/SCHED_Config.o  ./src/03-APP/StateMachine.o ./src/03-APP/TestScheduler.o ./src/03-APP/testLCD.o  ./src/02-HAL/SWITCH/SWITCH.o ./src/02-HAL/SWITCH/SWITCH_Config.o  ./src/02-HAL/LED/LED.o ./src/02-HAL/LED/LED_Config.o  ./src/02-HAL/LCD/LCD.o ./src/02-HAL/LCD/LCD_Config.o  ./src/01-MCAL/SYSTICK/SYSTICK.o  ./src/01-MCAL/RCC/RCC.o  ./src/01-MCAL/NVIC/NVIC.o  ./src/01-MCAL/GPIO/GPIO.o  ./src/main.o   
-'Finished building target: BLACKPILL.elf'
-' '
-'Invoking: GNU Arm Cross Create Flash Image'
-arm-none-eabi-objcopy -O ihex "BLACKPILL.elf"  "BLACKPILL.hex"
-'Finished building: BLACKPILL.hex'
-' '
-'Invoking: GNU Arm Cross Print Size'
-arm-none-eabi-size --format=berkeley "BLACKPILL.elf"
-   text	   data	    bss	    dec	    hex	filename
-   7891	    188	    472	   8551	   2167	BLACKPILL.elf
-'Finished building: BLACKPILL.siz'
-' '
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/01-MCAL/UART/UART.d" -MT"src/01-MCAL/UART/UART.o" -c -o "src/01-MCAL/UART/UART.o" "../src/01-MCAL/UART/UART.c"
+../src/01-MCAL/UART/UART.c:57:35: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ USART_Peri_t*UART[UART_PERI_NUM]={(UART_Peri_t*)UART1_ADDRESS,(UART_Peri_t*)UART2_ADDRESS,(UART_Peri_t*)UART6_ADDRESS};
+                                   ^
+../src/01-MCAL/UART/UART.c:57:35: note: (near initialization for 'UART[0]')
+../src/01-MCAL/UART/UART.c:57:63: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ USART_Peri_t*UART[UART_PERI_NUM]={(UART_Peri_t*)UART1_ADDRESS,(UART_Peri_t*)UART2_ADDRESS,(UART_Peri_t*)UART6_ADDRESS};
+                                                               ^
+../src/01-MCAL/UART/UART.c:57:63: note: (near initialization for 'UART[1]')
+../src/01-MCAL/UART/UART.c:57:91: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ USART_Peri_t*UART[UART_PERI_NUM]={(UART_Peri_t*)UART1_ADDRESS,(UART_Peri_t*)UART2_ADDRESS,(UART_Peri_t*)UART6_ADDRESS};
+                                                                                           ^
+../src/01-MCAL/UART/UART.c:57:91: note: (near initialization for 'UART[2]')
+../src/01-MCAL/UART/UART.c: In function 'UART_SendByte':
+../src/01-MCAL/UART/UART.c:64:48: warning: unused parameter 'Byte' [-Wunused-parameter]
+ UART_Status_t UART_SendByte             (uint8 Byte         )
+                                                ^
+../src/01-MCAL/UART/UART.c: In function 'UART_ReceiveByte':
+../src/01-MCAL/UART/UART.c:69:49: warning: unused parameter 'Container' [-Wunused-parameter]
+ UART_Status_t UART_ReceiveByte          (uint8 *Container   )
+                                                 ^
+../src/01-MCAL/UART/UART.c: In function 'UART_TXBufferAsyncZC':
+../src/01-MCAL/UART/UART.c:74:53: warning: unused parameter 'Request' [-Wunused-parameter]
+ UART_Status_t UART_TXBufferAsyncZC      (UART_Req_t Request )
+                                                     ^
+../src/01-MCAL/UART/UART.c: In function 'UART_RXceiveBufferAsyncZC':
+../src/01-MCAL/UART/UART.c:78:53: warning: unused parameter 'Request' [-Wunused-parameter]
+ UART_Status_t UART_RXceiveBufferAsyncZC (UART_Req_t Request )
+                                                     ^
+../src/01-MCAL/UART/UART.c: In function 'UART_Init':
+../src/01-MCAL/UART/UART.c:95:12: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'Peri'
+     if((CFG.Peri>UART_Peri_6)||(CFG.OverSampling>UART_OverSamplingOption_8))
+            ^
+../src/01-MCAL/UART/UART.c:95:18: error: 'UART_Peri_6' undeclared (first use in this function)
+     if((CFG.Peri>UART_Peri_6)||(CFG.OverSampling>UART_OverSamplingOption_8))
+                  ^
+../src/01-MCAL/UART/UART.c:95:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/01-MCAL/UART/UART.c:95:36: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'OverSampling'
+     if((CFG.Peri>UART_Peri_6)||(CFG.OverSampling>UART_OverSamplingOption_8))
+                                    ^
+../src/01-MCAL/UART/UART.c:97:20: error: 'UART_INVALID_INPUT' undeclared (first use in this function)
+         LOC_Status=UART_INVALID_INPUT;
+                    ^
+../src/01-MCAL/UART/UART.c:99:17: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'Parity'
+     else if((CFG.Parity>UART_ParityOption_EVEN)||(CFG.StopBits>UART_StopBitsOption_2))
+                 ^
+../src/01-MCAL/UART/UART.c:99:54: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'StopBits'
+     else if((CFG.Parity>UART_ParityOption_EVEN)||(CFG.StopBits>UART_StopBitsOption_2))
+                                                      ^
+../src/01-MCAL/UART/UART.c:102:17: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'WordLength'
+     }else if(CFG.WordLength>UART_WordLengthOption_9)
+                 ^
+../src/01-MCAL/UART/UART.c:109:29: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'OverSampling'
+         LOC_OverSampling=CFG.OverSampling/UART_OverSamplingOption_8;
+                             ^
+../src/01-MCAL/UART/UART.c:111:57: error: 'UART_CFG_t {aka struct <anonymous>}' has no member named 'BaudRate'
+         LOC_USARTDIV = (((uint64)UART_CLK * 1000) / (CFG.BaudRate * (8 * (2 - LOC_OverSampling))));
+                                                         ^
+../src/01-MCAL/UART/UART.c:89:12: warning: variable 'LOC_Mantissa' set but not used [-Wunused-but-set-variable]
+     uint16 LOC_Mantissa     =0;
+            ^
+../src/01-MCAL/UART/UART.c:88:12: warning: unused variable 'LOC_CR2Value' [-Wunused-variable]
+     uint32 LOC_CR2Value     =0;
+            ^
+../src/01-MCAL/UART/UART.c:87:12: warning: unused variable 'LOC_CR1Value' [-Wunused-variable]
+     uint32 LOC_CR1Value     =0;
+            ^
+../src/01-MCAL/UART/UART.c:86:13: warning: unused variable 'LOC_BRRValue' [-Wunused-variable]
+     float32 LOC_BRRValue    =0;
+             ^
+../src/01-MCAL/UART/UART.c:85:19: warning: variable 'LOC_Status' set but not used [-Wunused-but-set-variable]
+     UART_Status_t LOC_Status=UART_NOK;
+                   ^
+../src/01-MCAL/UART/UART.c:83:53: warning: parameter 'CFG' set but not used [-Wunused-but-set-parameter]
+ UART_Status_t UART_Init                 (UART_CFG_t CFG     )
+                                                     ^
+../src/01-MCAL/UART/UART.c: In function 'UART_SendByte':
+../src/01-MCAL/UART/UART.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/UART/UART.c: In function 'UART_ReceiveByte':
+../src/01-MCAL/UART/UART.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/UART/UART.c: In function 'UART_TXBufferAsyncZC':
+../src/01-MCAL/UART/UART.c:77:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/UART/UART.c: In function 'UART_RXceiveBufferAsyncZC':
+../src/01-MCAL/UART/UART.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/01-MCAL/UART/UART.c: In function 'UART_Init':
+../src/01-MCAL/UART/UART.c:124:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/01-MCAL/UART/subdir.mk:20: src/01-MCAL/UART/UART.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
 
-18:13:48 Build Finished. 0 errors, 0 warnings. (took 2s.144ms)
+23:45:01 Build Failed. 10 errors, 18 warnings. (took 937ms)
 

@@ -11,6 +11,7 @@
 #include "../../../include/01-MCAL/UART/UART.h"
 /********************************** Definitions ********************************************/
 #define UART_PERI_NUM 3
+#define UART_CLK    (uint32)25000000
 
 #define UART6_ADDRESS  0x40011400
 #define UART1_ADDRESS  0x40011000
@@ -81,5 +82,43 @@ UART_Status_t UART_RXceiveBufferAsyncZC (UART_Req_t Request )
 
 UART_Status_t UART_Init                 (UART_CFG_t CFG     )
 {
-UART_Status_t LOC_Status=UART_NOK;
+    UART_Status_t LOC_Status=UART_NOK;
+    float32 LOC_BRRValue    =0;
+    uint32 LOC_CR1Value     =0;
+    uint32 LOC_CR2Value     =0;
+    uint16 LOC_Mantissa     =0;
+    uint16 LOC_Fraction     =0;
+    uint32 LOC_USARTDIV     =0;
+    uint32 LOC_OverSampling =0;
+
+    // validation
+    if((CFG.Peri>UART_Peri_6)||(CFG.OverSampling>UART_OverSamplingOption_8))
+    {
+        LOC_Status=UART_INVALID_INPUT;
+    }
+    else if((CFG.Parity>UART_ParityOption_EVEN)||(CFG.StopBits>UART_StopBitsOption_2))
+    {
+        LOC_Status=UART_INVALID_INPUT;
+    }else if(CFG.WordLength>UART_WordLengthOption_9)
+    {
+        LOC_Status=UART_INVALID_INPUT;
+    }else
+    {
+        LOC_Status=UART_OK;
+        // read oversampling option
+        LOC_OverSampling=CFG.OverSampling/UART_OverSamplingOption_8;
+        // calculate USARTDIV valueand multiply it by 1000 to get the fraction as integer
+        LOC_USARTDIV = (((uint64)UART_CLK * 1000) / (CFG.BaudRate * (8 * (2 - LOC_OverSampling))));
+
+        LOC_Mantissa=LOC_USARTDIV/1000;
+        LOC_Fraction=(LOC_USARTDIV%1000)*(8*(2-LOC_OverSampling));
+
+        if(LOC_Fraction%1000>=500)
+        {
+             LOC_Fraction = (LOC_Fraction / 1000) + 1;
+        }else
+        {
+            LOC_Fraction = LOC_Fraction / 1000;
+        }
+    }
 }
